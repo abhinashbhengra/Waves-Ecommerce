@@ -1,0 +1,23 @@
+.cart-container {
+  height: 95vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+}
+.products {
+  border: 1xp solid red;
+}
+
+.checkout {
+  border: 1px solid green;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.p-flex {
+  display: flex;
+  justify-content: space-around;
+}

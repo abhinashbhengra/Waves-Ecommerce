@@ -1,4 +1,4 @@
-import React from "react";
+import "../cart/cart.css";
 import Navbar from "../../components/navbar";
 import SingleProduct from "../../components/single-product";
 
@@ -9,7 +9,7 @@ export const cartDB = [
     description: "description",
     price: 4000,
     rating: 4.5,
-    image: "https://dummyimage.com/300",
+    image: "https://dummyimage.com/200",
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ export const cartDB = [
     description: "description",
     price: 4000,
     rating: 4.5,
-    image: "https://dummyimage.com/300",
+    image: "https://dummyimage.com/200",
   },
 ];
 const Cart = () => {
@@ -30,7 +30,25 @@ const Cart = () => {
             <SingleProduct product={product} key={product.id} />
           ))}
         </div>
-        <div>checkout section</div>
+        <div className="checkout">
+          <div>
+            <h4>Price Details</h4>
+          </div>
+          <div className="p-flex">
+            <div>Price</div>
+            <div>499</div>
+          </div>
+          <div className="p-flex">
+            <div>Discount</div>
+            <div>-99</div>
+          </div>
+          <div className="p-flex">
+            <div>
+              <b>Total</b>
+            </div>
+            <div>400</div>
+          </div>
+        </div>
       </div>
     </div>
   );
