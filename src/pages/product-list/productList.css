@@ -4,3 +4,10 @@
   display: grid;
   grid-template-columns: 1fr 4fr;
 }
+.products-list {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  overflow: scroll;
+}

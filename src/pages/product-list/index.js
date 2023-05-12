@@ -3,6 +3,9 @@ import "../product-list/productList.css";
 import Navbar from "../../components/navbar";
 import Filters from "../../components/filters";
 
+import { productDB } from "../../data/dummyDB";
+import ProductCard from "../../components/product-card";
+
 const ProductList = () => {
   return (
     <div>
@@ -11,7 +14,11 @@ const ProductList = () => {
         <div>
           <Filters />
         </div>
-        <div className="products-list">Product List</div>
+        <div className="products-list">
+          {productDB.map((product) => (
+            <ProductCard product={product} key={product.id} />
+          ))}
+        </div>
       </div>
     </div>
   );
