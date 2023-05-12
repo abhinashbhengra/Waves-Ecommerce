@@ -15,7 +15,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/products" element={<ProductList />} />
         <Route path="/cart" element={<Cart />} />
-        <Route path="/whishlist" element={<WishList />} />
+        <Route path="/wishlist" element={<WishList />} />
         <Route path="*" element={<Error />} />
       </Routes>
     </div>
