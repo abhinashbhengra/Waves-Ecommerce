@@ -3,7 +3,7 @@ import "../single-product/singleProduct.css";
 const SingleProduct = ({ product }) => {
   console.log(product);
   return (
-    <div className="product-container">
+    <div className="single-product">
       <div className="image">
         <img src={product.image} />
       </div>
