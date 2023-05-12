@@ -1,0 +1,17 @@
+.nav-container {
+  border: 1px solid red;
+  padding: 0 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.links-contaiiner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.route-link {
+  display: flex;
+  gap: 6px;
+}
