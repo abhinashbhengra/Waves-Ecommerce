@@ -1,12 +1,18 @@
-import React from "react";
+import "../product-list/productList.css";
+
 import Navbar from "../../components/navbar";
+import Filters from "../../components/filters";
 
 const ProductList = () => {
   return (
     <div>
       <Navbar />
-      <p>Product Listing</p>
-      <div>Products</div>
+      <div className="products-container">
+        <div>
+          <Filters />
+        </div>
+        <div className="products-list">Product List</div>
+      </div>
     </div>
   );
 };
