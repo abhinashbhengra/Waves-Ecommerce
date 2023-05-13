@@ -6,7 +6,7 @@ import Cart from "./pages/cart";
 import Error from "./pages/error";
 import HomePage from "./pages/home";
 import ProductList from "./pages/product-list";
-import WishList from "./pages/whislist";
+import WishList from "./pages/wishlist";
 
 function App() {
   return (
