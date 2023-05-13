@@ -1,0 +1,10 @@
+.wishlist-container {
+  height: 95vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wishlist-products {
+  display: flex;
+  gap: 3rem;
+}
