@@ -8,20 +8,32 @@ import { v4 as uuid } from "uuid";
 export const categories = [
   {
     _id: uuid(),
-    categoryName: "fiction",
+    categoryName: "headphone",
     description:
-      "literature in the form of prose, especially novels, that describes imaginary events and people",
+      "They are electroacoustic transducers, which convert an electrical signal to a corresponding sound.",
   },
   {
     _id: uuid(),
-    categoryName: "non-fiction",
+    categoryName: "in-ears",
     description:
-      "Non-fiction is writing that gives information or describes real events, rather than telling a story.",
+      "Small headphones with similar portability to earbuds that are inserted in the ear canal itself",
   },
   {
     _id: uuid(),
-    categoryName: "horror",
+    categoryName: "wireless",
     description:
-      "Meant to cause discomfort and fear for both the character and readers, horror writers often make use of supernatural and paranormal elements in morbid stories that are sometimes a little too realistic.",
+      "headphones that connect to a device, such as a smartphone, stereo speaker, television, gaming console, computer, or other electronic devices without using a wire or cable.",
+  },
+  {
+    _id: uuid(),
+    categoryName: "accessories",
+    description:
+      "Key headphone accessories include the cables, plugs, converters, and extensions that you need to hook up to your player or phone",
+  },
+  {
+    _id: uuid(),
+    categoryName: "home-audio",
+    description:
+      "Home audio systems are audio electronics intended for home entertainment use",
   },
 ];
