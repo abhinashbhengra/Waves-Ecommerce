@@ -23,13 +23,16 @@ const Categories = () => {
   console.log(categories);
 
   return (
-    <div className="category-container">
-      {categories.map((category) => (
-        <div className="category" key={category.id}>
-          <p>{category.categoryName}</p>
-        </div>
-      ))}
-    </div>
+    <>
+      <h3>Featured Categories</h3>
+      <div className="category-container">
+        {categories.map((category) => (
+          <div className="category" key={category.id}>
+            <p>{category.categoryName.toUpperCase()}</p>
+          </div>
+        ))}
+      </div>
+    </>
   );
 };
 

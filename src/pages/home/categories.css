@@ -4,9 +4,10 @@
   margin: 10px 0;
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 2rem;
 }
 .category {
   border: 1px solid green;
-  width: 100px;
+  width: 200px;
 }
