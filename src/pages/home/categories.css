@@ -1,0 +1,12 @@
+.category-container {
+  border: 1px solid red;
+  height: 10vh;
+  margin: 10px 0;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+.category {
+  border: 1px solid green;
+  width: 100px;
+}

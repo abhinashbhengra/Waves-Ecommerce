@@ -1,3 +1,4 @@
+import "../home/categories.css";
 import { useEffect, useState } from "react";
 import { getCategories } from "../../utils/categories/getCategories";
 
@@ -21,7 +22,15 @@ const Categories = () => {
 
   console.log(categories);
 
-  return <div>Categories</div>;
+  return (
+    <div className="category-container">
+      {categories.map((category) => (
+        <div className="category" key={category.id}>
+          <p>{category.categoryName}</p>
+        </div>
+      ))}
+    </div>
+  );
 };
 
 export default Categories;
