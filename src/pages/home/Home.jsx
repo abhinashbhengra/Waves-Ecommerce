@@ -8,16 +8,7 @@ const HomePage = () => {
     <div>
       <Navbar />
       <div className="hero-container">Hero Section</div>
-      <div className="category-container">
-        <div className="category">section 01</div>
-        <div className="category">section 02</div>
-        <div className="category">section 03</div>
-        <div className="category">section 04</div>
-        <div className="category">section 05</div>
-        <div className="category">
-          <Categories />
-        </div>
-      </div>
+      <Categories />
       <div className="feature-container">
         <div className="feature-left">
           <div className="feature-one">section 01</div>
