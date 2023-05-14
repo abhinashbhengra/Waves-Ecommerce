@@ -1,6 +1,7 @@
 import "../home/home.css";
 
 import Navbar from "../../components/navbar";
+import Categories from "./Categories";
 
 const HomePage = () => {
   return (
@@ -13,6 +14,9 @@ const HomePage = () => {
         <div className="category">section 03</div>
         <div className="category">section 04</div>
         <div className="category">section 05</div>
+        <div className="category">
+          <Categories />
+        </div>
       </div>
       <div className="feature-container">
         <div className="feature-left">
