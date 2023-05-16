@@ -1,4 +1,5 @@
 export const initialFilters = {
+  sortBy: "",
   categories: [],
 };
 
@@ -16,6 +17,12 @@ export const filterReducer = (state, action) => {
         };
       }
       return { ...state, categories: [...state.categories, action.payload] };
+
+    case "SORT_BY":
+      return {
+        ...state,
+        sortBy: action.payload,
+      };
     default:
       return state;
   }
