@@ -12,15 +12,18 @@ import { SortFilter } from "./components/SortFilter";
 
 export const Filters = () => {
   const { filterState, filterDispatch } = useContext(FilterContext);
-  const { categories, sortBy } = filterState;
+  const { categories, rating, sortBy, collections } = filterState;
   return (
     <div className="filters-container">
       <FilterHead />
       <PriceFilter />
       <CategoryFilter categories={categories} filterDispatch={filterDispatch} />
-      <RatingFilter />
+      <RatingFilter rating={rating} filterDispatch={filterDispatch} />
       <SortFilter sortBy={sortBy} filterDispatch={filterDispatch} />
-      <CollectionFilter />
+      <CollectionFilter
+        collections={collections}
+        filterDispatch={filterDispatch}
+      />
     </div>
   );
 };
