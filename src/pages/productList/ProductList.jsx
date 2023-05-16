@@ -1,7 +1,7 @@
 import "./productList.css";
 
 import Navbar from "../../components/navbar";
-import Filters from "../../components/filters";
+import { Filters } from "./filters/Filters";
 
 import { productDB } from "../../data/dummyDB";
 import ProductCard from "../../components/product-card";
