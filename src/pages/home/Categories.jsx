@@ -6,12 +6,12 @@ import { FilterContext } from "../../context/FilterContext";
 
 const Categories = () => {
   const [categories, setCategories] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState("");
+
   const navigate = useNavigate();
   const { filterDispatch } = useContext(FilterContext);
 
   const handleCategoryClick = (categoryName) => {
-    console.log("category clicked", categoryName);
+    filterDispatch({ type: "SELECT_CATEGORY", payload: categoryName });
     navigate("/products");
   };
 
@@ -29,9 +29,6 @@ const Categories = () => {
     };
     fetchData();
   }, []);
-
-  // console.log(categories);
-  console.log(filterDispatch);
 
   return (
     <>

@@ -1,5 +1,8 @@
 // import "../filters/filters.css";
 
+import { FilterContext } from "../../../context/FilterContext";
+
+import { useContext } from "react";
 import { CategoryFilter } from "./components/CategoryFilter";
 import { CollectionFilter } from "./components/CollectionFilter";
 import { FilterHead } from "./components/FilterHead";
@@ -8,12 +11,13 @@ import { RatingFilter } from "./components/RatingFilter";
 import { SortFilter } from "./components/SortFilter";
 
 export const Filters = () => {
-  // console.log(categories);
+  const { filterState, filterDispatch } = useContext(FilterContext);
+  const { categories } = filterState;
   return (
     <div className="filters-container">
       <FilterHead />
       <PriceFilter />
-      <CategoryFilter />
+      <CategoryFilter categories={categories} filterDispatch={filterDispatch} />
       <RatingFilter />
       <SortFilter />
       <CollectionFilter />

@@ -1,8 +1,12 @@
 import { useEffect, useState } from "react";
 import { getCategories } from "../../../../utils/categories/getCategories";
 
-export const CategoryFilter = () => {
-  const [categories, setCategories] = useState([]);
+export const CategoryFilter = ({ categories, filterDispatch }) => {
+  const [allCategories, setAllCategories] = useState([]);
+
+  const handleCategory = (e) => {
+    filterDispatch({ type: "SET_CATEGORY", payload: e.target.name });
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -10,7 +14,7 @@ export const CategoryFilter = () => {
         const response = await getCategories();
         if (response.status === 200) {
           const { categories } = await response.json();
-          setCategories(categories);
+          setAllCategories(categories);
         }
       } catch (error) {
         console.log(error);
@@ -21,10 +25,15 @@ export const CategoryFilter = () => {
   return (
     <>
       <p>Category</p>
-      {categories.map((category) => (
+      {allCategories.map((category) => (
         <div key={category._id}>
           <label htmlFor={category.categoryName}>
-            <input type="checkbox" />
+            <input
+              type="checkbox"
+              name={category.categoryName}
+              checked={categories.includes(category.categoryName)}
+              onChange={handleCategory}
+            />
             {category.categoryName}
           </label>
         </div>
