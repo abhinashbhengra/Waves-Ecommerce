@@ -36,6 +36,9 @@ export const filterReducer = (state, action) => {
     case "NEW_LAUNCH":
       return { ...state, new_launch: !state.new_launch };
 
+    case "RESET":
+      return initialFilters;
+
     default:
       return state;
   }
