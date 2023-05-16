@@ -8,7 +8,7 @@ const Filters = () => {
     "Accessories",
     "Home Audio",
   ];
-  console.log(categories);
+  // console.log(categories);
   return (
     <div className="filters-container">
       <div>
