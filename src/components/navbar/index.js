@@ -1,12 +1,21 @@
+import { useContext } from "react";
 import "../navbar/navbar.css";
 
 import { Link } from "react-router-dom";
+import { FilterContext } from "../../context/FilterContext";
 
 const Navbar = () => {
+  const { filterDispatch } = useContext(FilterContext);
+
+  const handleFilter = () => {
+    filterDispatch({ type: "RESET" });
+  };
   return (
     <div className="nav-container">
       <div>
-        <Link to="/">Waves</Link>
+        <Link to="/" onClick={handleFilter}>
+          Waves
+        </Link>
       </div>
       <div>
         <label>
