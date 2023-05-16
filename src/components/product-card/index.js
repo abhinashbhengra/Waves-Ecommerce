@@ -1,7 +1,7 @@
 import "../product-card/productCard.css";
 
 const ProductCard = ({ product }) => {
-  console.log(product);
+  // console.log(product);
   return (
     <div className="product-container">
       <div className="image">
