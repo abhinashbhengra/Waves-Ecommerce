@@ -2,7 +2,8 @@ export const initialFilters = {
   categories: [],
   rating: null,
   sortBy: null,
-  collections: [],
+  best_seller: false,
+  new_launch: false,
 };
 
 export const filterReducer = (state, action) => {
@@ -29,17 +30,11 @@ export const filterReducer = (state, action) => {
         ...state,
         sortBy: action.payload,
       };
+    case "BEST_SELLER":
+      return { ...state, best_seller: !state.best_seller };
 
-    case "SET_COLLECTION":
-      if (state.collections.include(action.payload)) {
-        return {
-          ...state,
-          collections: state.collections.filter(
-            (collection) => collection !== action.payload
-          ),
-        };
-      }
-      return { ...state, collections: [...state.collections, action.payload] };
+    case "NEW_LAUNCH":
+      return { ...state, new_launch: !state.new_launch };
 
     default:
       return state;

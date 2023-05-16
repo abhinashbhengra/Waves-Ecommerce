@@ -12,7 +12,8 @@ import { SortFilter } from "./components/SortFilter";
 
 export const Filters = () => {
   const { filterState, filterDispatch } = useContext(FilterContext);
-  const { categories, rating, sortBy, collections } = filterState;
+  const { categories, rating, sortBy, best_seller, new_launch } = filterState;
+
   return (
     <div className="filters-container">
       <FilterHead />
@@ -21,7 +22,7 @@ export const Filters = () => {
       <RatingFilter rating={rating} filterDispatch={filterDispatch} />
       <SortFilter sortBy={sortBy} filterDispatch={filterDispatch} />
       <CollectionFilter
-        collections={collections}
+        collections={{ best_seller, new_launch }}
         filterDispatch={filterDispatch}
       />
     </div>
