@@ -1,4 +1,5 @@
 export const initialFilters = {
+  price: 50000,
   categories: [],
   rating: null,
   sortBy: null,
@@ -8,6 +9,9 @@ export const initialFilters = {
 
 export const filterReducer = (state, action) => {
   switch (action.type) {
+    case "SET_PRICE":
+      return { ...state, price: action.payload };
+
     case "SELECT_CATEGORY":
       return { ...initialFilters, categories: [action.payload] };
 
