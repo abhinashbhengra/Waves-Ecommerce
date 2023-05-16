@@ -1,5 +1,6 @@
 import "../cart/cart.css";
-import Navbar from "../../components/navbar";
+
+import { Navbar } from "../../components/navbar/Navbar";
 import SingleProduct from "../../components/single-product";
 
 export const cartDB = [

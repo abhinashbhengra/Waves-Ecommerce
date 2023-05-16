@@ -4,7 +4,7 @@ import "../navbar/navbar.css";
 import { Link } from "react-router-dom";
 import { FilterContext } from "../../context/FilterContext";
 
-const Navbar = () => {
+export const Navbar = () => {
   const { filterDispatch } = useContext(FilterContext);
 
   const handleFilter = () => {
@@ -37,5 +37,3 @@ const Navbar = () => {
     </div>
   );
 };
-
-export default Navbar;

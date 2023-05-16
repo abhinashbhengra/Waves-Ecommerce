@@ -1,6 +1,6 @@
 import "../wishlist/wishlist.css";
-import Navbar from "../../components/navbar";
 
+import { Navbar } from "../../components/navbar/Navbar";
 import ProductCard from "../../components/product-card";
 
 export const wishlistDB = [

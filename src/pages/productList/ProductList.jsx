@@ -1,6 +1,6 @@
 import "./productList.css";
 
-import Navbar from "../../components/navbar";
+import { Navbar } from "../../components/navbar/Navbar";
 import { Filters } from "./filters/Filters";
 
 import { productDB } from "../../data/dummyDB";

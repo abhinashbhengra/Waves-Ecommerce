@@ -1,6 +1,6 @@
 import "../home/home.css";
 
-import Navbar from "../../components/navbar";
+import { Navbar } from "../../components/navbar/Navbar";
 import Categories from "./Categories";
 
 const HomePage = () => {
