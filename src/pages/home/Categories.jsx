@@ -1,9 +1,19 @@
 import "../home/categories.css";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { getCategories } from "../../utils/categories/getCategories";
+import { useNavigate } from "react-router-dom";
+import { FilterContext } from "../../context/FilterContext";
 
 const Categories = () => {
   const [categories, setCategories] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState("");
+  const navigate = useNavigate();
+  const { filterDispatch } = useContext(FilterContext);
+
+  const handleCategoryClick = (categoryName) => {
+    console.log("category clicked", categoryName);
+    navigate("/products");
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -20,14 +30,19 @@ const Categories = () => {
     fetchData();
   }, []);
 
-  console.log(categories);
+  // console.log(categories);
+  console.log(filterDispatch);
 
   return (
     <>
       <h3>Featured Categories</h3>
       <div className="category-container">
         {categories.map((category) => (
-          <div className="category" key={category.id}>
+          <div
+            className="category"
+            key={category.id}
+            onClick={(e) => handleCategoryClick(category.categoryName)}
+          >
             <p>{category.categoryName.toUpperCase()}</p>
           </div>
         ))}
