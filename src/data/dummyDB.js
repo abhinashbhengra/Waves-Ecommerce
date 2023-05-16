@@ -8,6 +8,7 @@ export const productDB = [
     image: "https://dummyimage.com/300",
     categoryName: "headphone",
     _isBestSeller: true,
+    _isNewLaunch: true,
   },
   {
     id: 2,
