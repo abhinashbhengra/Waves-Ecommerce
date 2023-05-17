@@ -29,13 +29,29 @@ const HomePage = () => {
         />
       </div>
       <Categories />
-      <div className="feature-container">
-        <div className="feature-left">
-          <div className="feature-one">section 01</div>
-        </div>
-        <div className="feature-right">
-          <div className="feature-two">section 02</div>
-          <div className="feature-two">section 03</div>
+      <div className="best-main">
+        <span className="best-heading">
+          <p>Best Sellers</p>
+        </span>
+        <div className="best-container">
+          <div className="feature-left">
+            <div className="feature-one">
+              <p className="best_seller-text">Audio Technica ATH-M40X</p>
+              <img
+                src="https://ik.imagekit.io/u6itcrvxy/heaphone_collection/audio_technica/AudioTechnica01.png?updatedAt=1682678158351"
+                alt="best-seller"
+              />
+            </div>
+          </div>
+          <div className="feature-left">
+            <div className="feature-one">
+              <p className="best_seller-text">Beyer Dynamics</p>
+              <img
+                src="https://ik.imagekit.io/u6itcrvxy/heaphone_collection/beyerdynamics/Beyerdynamics05.png?updatedAt=1682678156699"
+                alt="best-seller"
+              />
+            </div>
+          </div>
         </div>
       </div>
       <div className="launches-container">
