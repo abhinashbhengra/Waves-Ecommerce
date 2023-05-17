@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Sora:wght@700&display=swap");
+.sellerCard-container {
+  font-family: "Roboto", sans-serif;
+  /* border: 1px solid green; */
+  background-color: #ffffff;
+  padding: 12px;
+  width: 300px;
+  text-align: center;
+  position: relative;
+}
+.sellerCard-wishlist {
+  position: absolute;
+  top: 18px;
+  right: 17px;
+  z-index: 1;
+}
+.sellerCard-wishlist:hover {
+  cursor: pointer;
+}
+.sellerCard-image img {
+  width: 100%;
+  margin-top: 2.5rem;
+  margin-bottom: 2rem;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.sellerCard-image img:hover {
+  transform: scale(0.9);
+}
+
+.sellerCard-heading {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  line-height: 22.5px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.sellerCard-description {
+  font-size: 12px;
+  line-height: 16.8px;
+  margin-bottom: 10px;
+}
+.sellerCard-price {
+  color: #3b08ff;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  line-height: 22.4px;
+  margin-bottom: 10px;
+}
+.prev-price {
+  color: #555555;
+  font-weight: 400;
+  text-decoration: line-through;
+  letter-spacing: -0.01px;
+}
+.sellerCard-rating {
+  font-size: 10px;
+  margin-bottom: 10px;
+}
