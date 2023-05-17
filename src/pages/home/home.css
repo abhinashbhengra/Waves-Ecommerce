@@ -7,7 +7,6 @@
   position: absolute;
   top: 22.5rem;
   left: 8rem;
-  /* border: 1px solid red; */
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -39,6 +38,12 @@
   letter-spacing: 2px;
   cursor: pointer;
 }
+.hero-button:hover {
+  background-color: #4444;
+  color: white;
+  border: 1px solid white;
+}
+
 .feature-container {
   border: 1px solid red;
   height: 40vh;
