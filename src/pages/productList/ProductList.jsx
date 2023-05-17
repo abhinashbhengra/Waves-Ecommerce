@@ -4,7 +4,7 @@ import { Navbar } from "../../components/navbar/Navbar";
 import { Filters } from "./filters/Filters";
 
 import { productDB } from "../../data/dummyDB";
-import ProductCard from "../../components/product-card";
+import { ProductCard } from "../../components/product-card/ProductCard";
 import { getFilteredData } from "../../utils/categories/getFilteredData";
 import { useContext } from "react";
 import { FilterContext } from "../../context/FilterContext";

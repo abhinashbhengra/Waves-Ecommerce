@@ -1,7 +1,11 @@
+import { useContext } from "react";
 import "../product-card/productCard.css";
+import { WishlistContext } from "../../context/WishlistContext";
 
-const ProductCard = ({ product }) => {
-  // console.log(product);
+export const ProductCard = ({ product }) => {
+  const { wishlistState, addToWishlist, removeFromWishlist } =
+    useContext(WishlistContext);
+
   return (
     <div className="product-container">
       <div className="image">
@@ -23,10 +27,16 @@ const ProductCard = ({ product }) => {
       </div>
       <div>
         <button>Add to cart</button>
-        <button>Add to wishlist</button>
+        {wishlistState.wishlist.includes(product) ? (
+          <button onClick={() => removeFromWishlist(product.id)}>
+            Remove from wishlist
+          </button>
+        ) : (
+          <button onClick={() => addToWishlist(product)}>
+            Add to wishlist
+          </button>
+        )}
       </div>
     </div>
   );
 };
-
-export default ProductCard;
