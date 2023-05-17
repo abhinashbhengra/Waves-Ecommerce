@@ -22,10 +22,10 @@
   margin-top: 2.5rem;
   margin-bottom: 2rem;
   cursor: pointer;
-  transition: transform 0.1s;
+  transition: transform 0.2s;
 }
-.productCard-image:hover {
-  transform: scale(1.06);
+.productCard-image img:hover {
+  transform: scale(0.9);
 }
 
 .productCard-heading {
@@ -70,7 +70,9 @@
   cursor: pointer;
   border-radius: 4px;
   margin-bottom: 2rem;
+  transition: transform 0.2s;
 }
 .cart-button:hover {
   background-color: #555555;
+  transform: scale(1.01);
 }
