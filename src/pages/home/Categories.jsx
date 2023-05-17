@@ -32,7 +32,7 @@ const Categories = () => {
 
   return (
     <>
-      <h3>Featured Categories</h3>
+      <h3 className="featured-heading">Featured Categories</h3>
       <div className="category-container">
         {categories.map((category) => (
           <div
@@ -40,7 +40,14 @@ const Categories = () => {
             key={category.id}
             onClick={(e) => handleCategoryClick(category.categoryName)}
           >
-            <p>{category.categoryName.toUpperCase()}</p>
+            <img
+              src={category.image}
+              alt={category.categoryName}
+              className="category-img"
+            />
+            <p className="category-name">
+              {category.categoryName.toUpperCase()}
+            </p>
           </div>
         ))}
       </div>
