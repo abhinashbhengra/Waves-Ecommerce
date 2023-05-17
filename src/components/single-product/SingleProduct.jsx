@@ -1,7 +1,12 @@
+import { useContext } from "react";
 import "../single-product/singleProduct.css";
+import { CartContext } from "../../context/CartContext";
 
-const SingleProduct = ({ product }) => {
-  console.log(product);
+export const SingleProduct = ({ product }) => {
+  const { removeFromCart, decreaseQuantity, increaseQuantity } =
+    useContext(CartContext);
+  // console.log(product);
+
   return (
     <div className="single-product">
       <div className="image">
@@ -23,13 +28,19 @@ const SingleProduct = ({ product }) => {
           </div>
         </div>
         <div className="quantity">
-          <button>-</button>
-          <p>2</p>
-          <button>+</button>
+          <button
+            onClick={() => decreaseQuantity(product)}
+            disabled={product.quantity === 1}
+          >
+            -
+          </button>
+          <p>{product.quantity}</p>
+          <button onClick={() => increaseQuantity(product)}>+</button>
         </div>
+      </div>
+      <div>
+        <button onClick={() => removeFromCart(product.id)}>delete</button>
       </div>
     </div>
   );
 };
-
-export default SingleProduct;

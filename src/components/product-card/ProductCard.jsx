@@ -1,10 +1,15 @@
 import { useContext } from "react";
 import "../product-card/productCard.css";
 import { WishlistContext } from "../../context/WishlistContext";
+import { CartContext } from "../../context/CartContext";
+import { useNavigate } from "react-router-dom";
 
 export const ProductCard = ({ product }) => {
   const { wishlistState, addToWishlist, removeFromWishlist } =
     useContext(WishlistContext);
+  const { cartState, addToCart } = useContext(CartContext);
+
+  const navigate = useNavigate();
 
   return (
     <div className="product-container">
@@ -26,7 +31,11 @@ export const ProductCard = ({ product }) => {
         </div>
       </div>
       <div>
-        <button>Add to cart</button>
+        {cartState.cart.find(({ id }) => id === product.id) ? (
+          <button onClick={() => navigate("/cart")}>Go to Cart</button>
+        ) : (
+          <button onClick={() => addToCart(product)}>Add to Cart</button>
+        )}
         {wishlistState.wishlist.includes(product) ? (
           <button onClick={() => removeFromWishlist(product.id)}>
             Remove from wishlist
