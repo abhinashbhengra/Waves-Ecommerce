@@ -12,37 +12,45 @@ export const ProductCard = ({ product }) => {
   const navigate = useNavigate();
 
   return (
-    <div className="product-container">
-      <div className="image">
+    <div className="productCard-container">
+      <div className="productCard-wishlist">
+        {wishlistState.wishlist.includes(product) ? (
+          <div onClick={() => removeFromWishlist(product.id)}>
+            <img src="./images/filledheart.svg" alt="add_to_whislist" />
+          </div>
+        ) : (
+          <div onClick={() => addToWishlist(product)}>
+            <img src="./images/heart.svg" alt="add_to_whislist" />
+          </div>
+        )}
+      </div>
+      <div className="productCard-image">
         <img src={product.image} />
       </div>
       <div>
-        <div className="heading">
-          <h4>{product.title}</h4>
+        <div className="productCard-heading">
+          <p>{product.title}</p>
         </div>
-        <div className="description">
+        <div className="productCard-description">
           <p>{product.description}</p>
         </div>
-        <div className="price">
-          <p>{product.price}</p>
+        <div className="productCard-price">
+          <p>
+            ₹ {product.price} <span className="prev-price">₹ 12399</span>
+          </p>
         </div>
-        <div className="rating">
+        <div className="productCard-rating">
           <p>{product.rating}</p>
         </div>
       </div>
       <div>
         {cartState.cart.find(({ id }) => id === product.id) ? (
-          <button onClick={() => navigate("/cart")}>Go to Cart</button>
-        ) : (
-          <button onClick={() => addToCart(product)}>Add to Cart</button>
-        )}
-        {wishlistState.wishlist.includes(product) ? (
-          <button onClick={() => removeFromWishlist(product.id)}>
-            Remove from wishlist
+          <button onClick={() => navigate("/cart")} className="cart-button">
+            Go to Cart
           </button>
         ) : (
-          <button onClick={() => addToWishlist(product)}>
-            Add to wishlist
+          <button onClick={() => addToCart(product)} className="cart-button">
+            Add to Cart
           </button>
         )}
       </div>

@@ -1,11 +1,12 @@
 export const productDB = [
   {
     id: 1,
-    title: "Ibanez 6 String",
-    description: "description",
-    price: 4000,
+    title: "Audio-technica - ath - m50x",
+    description: "Closed-Back Studio Headphone",
+    price: 11999,
     rating: 4.5,
-    image: "https://dummyimage.com/300",
+    image:
+      "https://ik.imagekit.io/u6itcrvxy/heaphone_collection/audio_technica/AudioTechnica00.png?updatedAt=1682678158403",
     categoryName: "headphone",
     _isBestSeller: true,
     _isNewLaunch: true,
@@ -16,7 +17,8 @@ export const productDB = [
     description: "description",
     price: 40000,
     rating: 3,
-    image: "https://dummyimage.com/300",
+    image:
+      "https://ik.imagekit.io/u6itcrvxy/heaphone_collection/audio_technica/AudioTechnica00.png?updatedAt=1682678158403",
     categoryName: "headphone",
     _isNewLaunch: true,
   },
@@ -26,7 +28,8 @@ export const productDB = [
     description: "description",
     price: 30000,
     rating: 3.5,
-    image: "https://dummyimage.com/300",
+    image:
+      "https://ik.imagekit.io/u6itcrvxy/heaphone_collection/audio_technica/AudioTechnica00.png?updatedAt=1682678158403",
     categoryName: "in-ears",
   },
   {
@@ -35,7 +38,8 @@ export const productDB = [
     description: "description",
     price: 25000,
     rating: 4.2,
-    image: "https://dummyimage.com/300",
+    image:
+      "https://ik.imagekit.io/u6itcrvxy/heaphone_collection/audio_technica/AudioTechnica00.png?updatedAt=1682678158403",
     categoryName: "in-ears",
     rating: 4,
   },
@@ -45,7 +49,8 @@ export const productDB = [
     description: "description",
     price: 10000,
     rating: 3,
-    image: "https://dummyimage.com/300",
+    image:
+      "https://ik.imagekit.io/u6itcrvxy/heaphone_collection/audio_technica/AudioTechnica00.png?updatedAt=1682678158403",
     categoryName: "wireless",
     _isBestSeller: true,
   },
@@ -55,7 +60,8 @@ export const productDB = [
     description: "description",
     price: 56000,
     rating: 4.5,
-    image: "https://dummyimage.com/300",
+    image:
+      "https://ik.imagekit.io/u6itcrvxy/heaphone_collection/audio_technica/AudioTechnica00.png?updatedAt=1682678158403",
     categoryName: "wireless",
     rating: 4.3,
     _isBestSeller: true,
@@ -66,7 +72,8 @@ export const productDB = [
     description: "description",
     price: 45000,
     rating: 4.5,
-    image: "https://dummyimage.com/300",
+    image:
+      "https://ik.imagekit.io/u6itcrvxy/heaphone_collection/audio_technica/AudioTechnica00.png?updatedAt=1682678158403",
     categoryName: "accessories",
   },
   {
@@ -75,7 +82,8 @@ export const productDB = [
     description: "description",
     price: 68000,
     rating: 4.5,
-    image: "https://dummyimage.com/300",
+    image:
+      "https://ik.imagekit.io/u6itcrvxy/heaphone_collection/audio_technica/AudioTechnica00.png?updatedAt=1682678158403",
     categoryName: "accessories",
     _isBestSeller: true,
   },
@@ -85,7 +93,8 @@ export const productDB = [
     description: "description",
     price: 43000,
     rating: 4.3,
-    image: "https://dummyimage.com/300",
+    image:
+      "https://ik.imagekit.io/u6itcrvxy/heaphone_collection/audio_technica/AudioTechnica00.png?updatedAt=1682678158403",
     categoryName: "home-audio",
     _isBestSeller: true,
   },
@@ -95,7 +104,8 @@ export const productDB = [
     description: "description",
     price: 32000,
     rating: 4,
-    image: "https://dummyimage.com/300",
+    image:
+      "https://ik.imagekit.io/u6itcrvxy/heaphone_collection/audio_technica/AudioTechnica00.png?updatedAt=1682678158403",
     categoryName: "home-audio",
   },
 ];
