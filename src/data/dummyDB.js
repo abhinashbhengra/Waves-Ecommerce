@@ -1,7 +1,7 @@
 export const productDB = [
   {
     id: 1,
-    title: "Heading",
+    title: "Ibanez 6 String",
     description: "description",
     price: 4000,
     rating: 4.5,
@@ -12,7 +12,7 @@ export const productDB = [
   },
   {
     id: 2,
-    title: "Heading",
+    title: "Ibanez 7 String",
     description: "description",
     price: 40000,
     rating: 3,
@@ -22,7 +22,7 @@ export const productDB = [
   },
   {
     id: 3,
-    title: "Heading",
+    title: "Cort 6 String",
     description: "description",
     price: 30000,
     rating: 3.5,
@@ -31,7 +31,7 @@ export const productDB = [
   },
   {
     id: 4,
-    title: "Heading",
+    title: "Cort 7 String",
     description: "description",
     price: 25000,
     rating: 4.2,

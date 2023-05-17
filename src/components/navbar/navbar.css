@@ -5,6 +5,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 9999;
 }
 .links-contaiiner {
   display: flex;
@@ -15,4 +16,14 @@
 .route-link {
   display: flex;
   gap: 6px;
+}
+.search-container {
+  border: 1px solid red;
+  z-index: 999;
+}
+.display-search {
+  border: 1px solid purple;
+  position: absolute;
+  top: 2rem;
+  left: 40rem;
 }
