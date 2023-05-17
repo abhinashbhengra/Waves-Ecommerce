@@ -7,6 +7,7 @@ import Error from "./pages/error";
 import HomePage from "./pages/home/Home";
 import ProductList from "./pages/productList/ProductList";
 import { WishList } from "./pages/wishlist/Wishlist";
+import { User } from "./pages/user/User";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/products" element={<ProductList />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/wishlist" element={<WishList />} />
+        <Route path="/profile" element={<User />} />
         <Route path="*" element={<Error />} />
       </Routes>
     </div>

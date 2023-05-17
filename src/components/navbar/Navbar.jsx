@@ -54,10 +54,8 @@ export const Navbar = () => {
             <Link to="/products">Products</Link>
             <Link to="/cart">Cart</Link>
             <Link to="/wishlist">WishList</Link>
+            <Link to="/profile">Account</Link>
           </div>
-        </div>
-        <div>
-          <p>Account</p>
         </div>
       </div>
     </div>
