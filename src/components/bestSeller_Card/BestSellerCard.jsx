@@ -13,17 +13,6 @@ export const BestSellerCard = ({ product }) => {
 
   return (
     <div className="sellerCard-container">
-      <div className="sellerCard-wishlist">
-        {wishlistState.wishlist.includes(product) ? (
-          <div onClick={() => removeFromWishlist(product.id)}>
-            <img src="./images/filledheart.svg" alt="add_to_whislist" />
-          </div>
-        ) : (
-          <div onClick={() => addToWishlist(product)}>
-            <img src="./images/heart.svg" alt="add_to_whislist" />
-          </div>
-        )}
-      </div>
       <div className="productCard-image">
         <img src={product.image} />
       </div>
