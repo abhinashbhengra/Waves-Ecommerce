@@ -15,10 +15,16 @@ export const BestSeller = () => {
         </span>
         <div className="best-container">
           {displayBestProducts.map((product) => (
-            <div className="feature-left" key={product.id}>
-              <div className="feature-one">
-                <p className="best_seller-text">{product.title}</p>
-                <img src={product.image} alt="best-seller" />
+            <div className="best_seller-product" key={product.id}>
+              <div>
+                <img
+                  className="best_seller-image"
+                  src={product.image}
+                  alt="best-seller"
+                />
+              </div>
+              <div className="best_seller-text">
+                <p>{product.title}</p>
               </div>
             </div>
           ))}

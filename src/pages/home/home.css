@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Sora:wght@700&display=swap");
 .home-page-container {
-  padding: 4px 0;
+  padding: 0 0 1rem 0;
+  background-color: #f9f9f9;
 }

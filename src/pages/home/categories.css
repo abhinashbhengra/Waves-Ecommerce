@@ -25,6 +25,10 @@
 .category-img {
   width: 52px;
   margin-bottom: 0.6rem;
+  transition: transform 0.4s;
+}
+.category-img:hover {
+  transform: scale(0.9);
 }
 .category-name {
   font-family: "Roboto", sans-serif;

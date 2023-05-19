@@ -1,11 +1,18 @@
+.nav-main-container {
+  position: fixed;
+  top: 0;
+  padding: 20px 50px;
+  background-color: #f9f9f9;
+  width: 100%;
+  z-index: 1;
+}
+
 .nav-container {
-  border: 1px solid red;
-  height: 5vh;
+  /* margin-top: 1.2rem; */
   padding: 0 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 9999;
 }
 .links-contaiiner {
   display: flex;
@@ -19,7 +26,6 @@
 }
 .search-container {
   border: 1px solid red;
-  z-index: 999;
 }
 .display-search {
   border: 1px solid purple;
