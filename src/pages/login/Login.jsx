@@ -1,11 +1,9 @@
 import { useContext, useState } from "react";
 import { Navbar } from "../../components/navbar/Navbar";
 import { AuthContext } from "../../context/AuthContext";
-import { useLocation, useNavigate } from "react-router-dom";
-import { getLoginDetails } from "../../utils/login/getLoginDetails";
 
 export const Login = () => {
-  const { authDispatch, handleLogin } = useContext(AuthContext);
+  const { handleLogin } = useContext(AuthContext);
   const [user, setUser] = useState({
     email: "",
     password: "",
