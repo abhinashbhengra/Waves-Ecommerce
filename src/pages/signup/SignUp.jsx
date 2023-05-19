@@ -1,26 +1,45 @@
 import { useContext, useState } from "react";
 import { Navbar } from "../../components/navbar/Navbar";
 import { AuthContext } from "../../context/AuthContext";
-import { useNavigate } from "react-router-dom";
 
-export const Login = () => {
-  const { handleLogin } = useContext(AuthContext);
+export const SignUp = () => {
   const [user, setUser] = useState({
+    firstName: "",
+    lastName: "",
     email: "",
     password: "",
   });
 
-  const navigate = useNavigate();
+  const { handleSignup } = useContext(AuthContext);
 
-  const handleLoginClick = (e) => {
+  const handleSignupClick = (e) => {
     e.preventDefault();
-    handleLogin(user);
+    handleSignup(user);
   };
 
   return (
     <>
       <Navbar />
-      <form onSubmit={handleLoginClick}>
+      <h1>Signup Page</h1>
+      <form onSubmit={handleSignupClick}>
+        <input
+          type="text"
+          name="firstName"
+          placeholder="First name"
+          value={user.firstName}
+          onChange={(e) =>
+            setUser((curr) => ({ ...curr, firstName: e.target.value }))
+          }
+        />
+        <input
+          type="text"
+          name="lastName"
+          placeholder="Last name"
+          value={user.lastName}
+          onChange={(e) =>
+            setUser((curr) => ({ ...curr, lastName: e.target.value }))
+          }
+        />
         <input
           type="email"
           name="email"
@@ -39,8 +58,7 @@ export const Login = () => {
             setUser((curr) => ({ ...curr, password: e.target.value }))
           }
         />
-        <button type="submit">LOGIN</button>
-        <p onClick={() => navigate("/signup")}>Sign up</p>
+        <button type="submit">Create Account</button>
       </form>
     </>
   );

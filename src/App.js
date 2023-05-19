@@ -10,6 +10,8 @@ import { WishList } from "./pages/wishlist/Wishlist";
 import { User } from "./pages/user/User";
 import { Login } from "./pages/login/Login";
 import { RequiresAuth } from "./components/RequiresAuth";
+import { SignUp } from "./pages/signup/SignUp";
+import Mockman from "mockman-js";
 
 function App() {
   return (
@@ -23,7 +25,9 @@ function App() {
           <Route path="/profile" element={<User />} />
         </Route>
         <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<SignUp />} />
         <Route path="*" element={<Error />} />
+        <Route path="/mockman" element={<Mockman />} />
       </Routes>
     </div>
   );
