@@ -31,6 +31,7 @@ export const productDB = [
     image:
       "https://ik.imagekit.io/u6itcrvxy/heaphone_collection/audio_technica/AudioTechnica00.png?updatedAt=1682678158403",
     categoryName: "in-ears",
+    _isNewLaunch: true,
   },
   {
     id: 4,
@@ -107,5 +108,6 @@ export const productDB = [
     image:
       "https://ik.imagekit.io/u6itcrvxy/heaphone_collection/audio_technica/AudioTechnica00.png?updatedAt=1682678158403",
     categoryName: "home-audio",
+    _isNewLaunch: true,
   },
 ];

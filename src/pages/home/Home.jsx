@@ -5,6 +5,7 @@ import Categories from "./Categories";
 import { useNavigate } from "react-router-dom";
 import { ProductCard } from "../../components/product-card/ProductCard";
 import { BestSellerCard } from "../../components/bestSeller_Card/BestSellerCard";
+import { BestSeller } from "./best-seller/BestSeller";
 
 const newLaunchDB = [
   {
@@ -78,31 +79,7 @@ const HomePage = () => {
         />
       </div>
       <Categories />
-      <div className="best-main">
-        <span className="best-heading">
-          <p>Best Sellers</p>
-        </span>
-        <div className="best-container">
-          <div className="feature-left">
-            <div className="feature-one">
-              <p className="best_seller-text">Audio Technica ATH-M40X</p>
-              <img
-                src="https://ik.imagekit.io/u6itcrvxy/heaphone_collection/audio_technica/AudioTechnica01.png?updatedAt=1682678158351"
-                alt="best-seller"
-              />
-            </div>
-          </div>
-          <div className="feature-left">
-            <div className="feature-one">
-              <p className="best_seller-text">Beyer Dynamics</p>
-              <img
-                src="https://ik.imagekit.io/u6itcrvxy/heaphone_collection/beyerdynamics/Beyerdynamics05.png?updatedAt=1682678156699"
-                alt="best-seller"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
+      <BestSeller />
       <div className="new_launch-container">
         <span className="new_launch-heading">
           <p>New Launches</p>
