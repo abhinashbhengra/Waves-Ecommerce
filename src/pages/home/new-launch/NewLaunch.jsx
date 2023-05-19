@@ -14,7 +14,7 @@ export const NewLaunch = () => {
     newLaunch[2],
     newLaunch[3],
   ];
-  console.log(displayNewLaunch);
+
   return (
     <>
       <div className="new_launch-container">
