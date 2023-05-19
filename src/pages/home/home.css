@@ -1,45 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Sora:wght@700&display=swap");
-.hero-container {
-  height: 100vh;
-  margin: 2rem 0;
-}
-.hero-cta {
-  position: absolute;
-  top: 22.5rem;
-  left: 8rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-.hero-heading {
-  color: white;
-  font-family: "Sora", sans-serif;
-  font-size: 44px;
-  font-weight: 700;
-  line-height: 48px;
-}
-.hero-description {
-  color: white;
-  font-family: "Roboto", sans-serif;
-  font-size: 14px;
-  line-height: 25.6px;
-}
-.hero-image {
-  width: 100%;
-}
-.hero-button {
-  width: 160px;
-  padding: 17px 40px;
-  border-radius: 26px;
-  border-style: none;
-  font-family: "Roboto", sans-serif;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 2px;
-  cursor: pointer;
-}
-.hero-button:hover {
-  background-color: #4444;
-  color: white;
-  border: 1px solid white;
+.home-page-container {
+  padding: 4px 0;
 }
