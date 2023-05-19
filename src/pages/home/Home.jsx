@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { ProductCard } from "../../components/product-card/ProductCard";
 import { BestSellerCard } from "../../components/bestSeller_Card/BestSellerCard";
 import { BestSeller } from "./best-seller/BestSeller";
+import { NewLaunch } from "./new-launch/NewLaunch";
 
 const newLaunchDB = [
   {
@@ -80,18 +81,7 @@ const HomePage = () => {
       </div>
       <Categories />
       <BestSeller />
-      <div className="new_launch-container">
-        <span className="new_launch-heading">
-          <p>New Launches</p>
-        </span>
-        <div className="new_launch-products">
-          {newLaunchDB.map((product) => (
-            <div key={product.id}>
-              <BestSellerCard product={product} />
-            </div>
-          ))}
-        </div>
-      </div>
+      <NewLaunch />
     </div>
   );
 };

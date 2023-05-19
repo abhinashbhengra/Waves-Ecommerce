@@ -18,7 +18,7 @@ export const productDB = [
     price: 40000,
     rating: 3,
     image:
-      "https://ik.imagekit.io/u6itcrvxy/heaphone_collection/audio_technica/AudioTechnica00.png?updatedAt=1682678158403",
+      "https://ik.imagekit.io/u6itcrvxy/heaphone_collection/shure/Shure05.png?updatedAt=1682678150987",
     categoryName: "headphone",
     _isNewLaunch: true,
   },
@@ -29,20 +29,22 @@ export const productDB = [
     price: 30000,
     rating: 3.5,
     image:
-      "https://ik.imagekit.io/u6itcrvxy/heaphone_collection/audio_technica/AudioTechnica00.png?updatedAt=1682678158403",
+      "https://ik.imagekit.io/u6itcrvxy/heaphone_collection/sennheiser/Sennheiser05.png?updatedAt=1682678162340",
     categoryName: "in-ears",
     _isNewLaunch: true,
   },
   {
     id: 4,
-    title: "Cort 7 String",
+    title: "KZ Acoustics",
     description: "description",
     price: 25000,
     rating: 4.2,
     image:
-      "https://ik.imagekit.io/u6itcrvxy/heaphone_collection/audio_technica/AudioTechnica00.png?updatedAt=1682678158403",
+      "https://ik.imagekit.io/u6itcrvxy/heaphone_collection/kz_acoustics/KZAcoustics07.png?updatedAt=1682678143506",
     categoryName: "in-ears",
     rating: 4,
+    _isBestSeller: true,
+    _isNewLaunch: true,
   },
   {
     id: 5,

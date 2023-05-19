@@ -1,0 +1,26 @@
+.new_launch-container {
+  margin-top: 6rem;
+  margin-bottom: 6rem;
+}
+.new_launch-heading {
+  text-align: center;
+  font-family: "Sora", sans-serif;
+  font-size: 44px;
+  font-weight: 700;
+  line-height: 52.8px;
+  letter-spacing: -0.48px;
+}
+.new_launch-heading p {
+  /* background: linear-gradient(310deg, #6f66e8 0%, #42cfe7 100%); */
+  background: linear-gradient(310deg, #ee7b7f 0%, #fbcb62 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.new_launch-products {
+  margin: 40px 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
