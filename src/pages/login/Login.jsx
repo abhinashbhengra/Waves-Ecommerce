@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { Navbar } from "../../components/navbar/Navbar";
 import { AuthContext } from "../../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 export const Login = () => {
   const { handleLogin } = useContext(AuthContext);
@@ -8,6 +9,8 @@ export const Login = () => {
     email: "",
     password: "",
   });
+
+  const navigate = useNavigate();
 
   const handleLoginClick = (e) => {
     e.preventDefault();
@@ -37,6 +40,7 @@ export const Login = () => {
           }
         />
         <button type="submit">LOGIN</button>
+        <p onClick={() => navigate()}>Sign up</p>
       </form>
     </>
   );
