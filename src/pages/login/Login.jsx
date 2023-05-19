@@ -5,34 +5,21 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { getLoginDetails } from "../../utils/login/getLoginDetails";
 
 export const Login = () => {
-  const { authDispatch } = useContext(AuthContext);
+  const { authDispatch, handleLogin } = useContext(AuthContext);
   const [user, setUser] = useState({
     email: "",
     password: "",
   });
-  const location = useLocation();
-  const navigate = useNavigate();
-  const handleClick = () => {
-    setIsLoggedIn(!isLoggedIn);
-    navigate(location?.state?.from?.pathname);
+
+  const handleLoginClick = (e) => {
+    e.preventDefault();
+    handleLogin(user);
   };
 
-  const handleLogin = async (e) => {
-    e.preventDefault();
-    const response = await getLoginDetails(user);
-    authDispatch({
-      type: "LOGIN",
-      payload: {
-        user: response.foundUser,
-        token: response.encodedToken,
-      },
-    });
-    navigate(location?.state?.from?.pathname);
-  };
   return (
     <>
       <Navbar />
-      <form onSubmit={handleLogin}>
+      <form onSubmit={handleLoginClick}>
         <input
           type="email"
           name="email"
