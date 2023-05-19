@@ -6,7 +6,22 @@
   width: 100%;
   z-index: 1;
 }
-
+.logo {
+  width: 50px;
+}
+.products-logo {
+  width: 26px;
+}
+.cart-logo {
+  width: 40px;
+}
+.wishlist-logo {
+  width: 30px;
+  padding: 2px;
+}
+.profile-logo {
+  width: 20px;
+}
 .nav-container {
   /* margin-top: 1.2rem; */
   padding: 0 10px;
@@ -22,10 +37,21 @@
 }
 .route-link {
   display: flex;
-  gap: 6px;
+  align-items: center;
+  gap: 10px;
 }
 .search-container {
-  border: 1px solid red;
+  width: 60%;
+}
+.search-container input {
+  width: 100%;
+  padding: 6px;
+  border: 1px solid rgb(206, 206, 206);
+  /* border-style: none; */
+  border-radius: 20px;
+}
+.search-container button {
+  align-self: flex-end;
 }
 .display-search {
   border: 1px solid purple;
