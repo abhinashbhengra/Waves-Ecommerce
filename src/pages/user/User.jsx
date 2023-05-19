@@ -3,15 +3,21 @@ import { Navbar } from "../../components/navbar/Navbar";
 import { AuthContext } from "../../context/AuthContext";
 
 export const User = () => {
-  const { isLoggedIn, setIsLoggedIn } = useContext(AuthContext);
+  const { authState, authDispatch } = useContext(AuthContext);
+  const { token } = authState;
   const handleClick = () => {
-    setIsLoggedIn(!isLoggedIn);
+    // setIsLoggedIn(!isLoggedIn);
+    authDispatch({ type: "LOGOUT" });
   };
   return (
     <>
       <Navbar />
-      {isLoggedIn && "Hello Abhinash"}
-      <button onClick={handleClick}>{isLoggedIn ? "logout" : "login"}</button>
+      {token && (
+        <p>
+          Hello! {authState.user.firstName} {authState.user.lastName}
+        </p>
+      )}
+      <button onClick={handleClick}>{token ? "logout" : "login"}</button>
     </>
   );
 };

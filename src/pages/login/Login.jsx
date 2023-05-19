@@ -18,7 +18,6 @@ export const Login = () => {
   };
 
   const handleLogin = async (e) => {
-    console.log(user);
     e.preventDefault();
     const response = await getLoginDetails(user);
     authDispatch({
@@ -28,6 +27,7 @@ export const Login = () => {
         token: response.encodedToken,
       },
     });
+    navigate(location?.state?.from?.pathname);
   };
   return (
     <>
