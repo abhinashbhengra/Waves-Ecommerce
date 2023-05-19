@@ -1,11 +1,13 @@
-import { createContext, useState } from "react";
+import { createContext, useReducer } from "react";
+import { authInitial, authReducer } from "../reducers/authReducer";
 
-export const AuthContext = createContext({ isLoggedIn: false });
+export const AuthContext = createContext({ user: "", token: "" });
 
 export const AuthProvider = ({ children }) => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [authState, authDispatch] = useReducer(authReducer, authInitial);
+  console.log(authState);
   return (
-    <AuthContext.Provider value={{ isLoggedIn, setIsLoggedIn }}>
+    <AuthContext.Provider value={{ authState, authDispatch }}>
       {children}
     </AuthContext.Provider>
   );
