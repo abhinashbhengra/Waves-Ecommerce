@@ -1,6 +1,7 @@
 .products-container {
   border: 1px solid red;
-  height: 95vh;
+  height: 100vh;
+  padding-top: 5.3rem;
   display: grid;
   grid-template-columns: 1fr 4fr;
 }
