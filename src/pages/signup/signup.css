@@ -1,3 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Sora:wght@700&display=swap");
 .signup-main-container {
-  margin-top: 8rem;
+  border: 1px solid red;
+  height: 100vh;
+  background-color: #f9f9f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signup-section {
+  background-color: #efefef;
+  padding: 3rem 6rem;
+  border-radius: 8px;
+  width: 40%;
+}
+
+.signup-heading {
+  color: #444444;
+  text-align: center;
+  font-family: "Sora", sans-serif;
+  font-size: 44px;
+  font-weight: 700;
+  line-height: 52.8px;
+  letter-spacing: -0.48px;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+.signup-form input {
+  background-color: #efefef;
+  padding: 0.9rem 1rem;
+  border: 0.8px solid #dadada;
+  border-radius: 6px;
+}
+.signup-button {
+  border-style: none;
+  border-radius: 28px;
+  background-color: #444444;
+  color: #ffffff;
+  padding: 1.2rem 0;
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+.signup-button:hover {
+  transform: scale(0.98);
+}
+.signup-login-button {
+  text-align: center;
+  color: #444444;
+  font-family: "Roboto", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.signup-login-button:hover {
+  color: #3b08ff;
 }
