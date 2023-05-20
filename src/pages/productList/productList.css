@@ -1,9 +1,10 @@
 .products-container {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   height: 100vh;
   padding-top: 5.3rem;
+  margin: 0 0 0 1rem;
   display: grid;
-  grid-template-columns: 1fr 4fr;
+  grid-template-columns: 0.5fr 4fr;
 }
 .products-list {
   display: flex;

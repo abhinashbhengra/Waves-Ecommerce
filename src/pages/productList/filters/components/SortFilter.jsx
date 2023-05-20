@@ -8,30 +8,34 @@ export const SortFilter = ({ sortBy, filterDispatch }) => {
   };
   return (
     <>
-      <p>Sort by</p>
-      <div>
-        <label>
-          <input
-            type="radio"
-            name="sort"
-            value="LOW_TO_HIGH"
-            checked={sortBy === "LOW_TO_HIGH"}
-            onChange={handleSort}
-          />
-          Price - Low To High
-        </label>
-      </div>
-      <div>
-        <label>
-          <input
-            type="radio"
-            name="sort"
-            value="HIGH_TO_LOW"
-            checked={sortBy === "HIGH_TO_LOW"}
-            onChange={handleSort}
-          />
-          Price - High to Low
-        </label>
+      <div className="sort-main-container">
+        <p className="filter-heading">Sort By</p>
+        <div className="sort">
+          <div>
+            <label className="sort-label">
+              <input
+                type="radio"
+                name="sort"
+                value="LOW_TO_HIGH"
+                checked={sortBy === "LOW_TO_HIGH"}
+                onChange={handleSort}
+              />
+              <p className="sort-detail">Price - Low To High</p>
+            </label>
+          </div>
+          <div>
+            <label className="sort-label">
+              <input
+                type="radio"
+                name="sort"
+                value="HIGH_TO_LOW"
+                checked={sortBy === "HIGH_TO_LOW"}
+                onChange={handleSort}
+              />
+              <p className="sort-detail">Price - High to Low</p>
+            </label>
+          </div>
+        </div>
       </div>
     </>
   );

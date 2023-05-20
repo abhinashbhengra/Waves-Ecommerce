@@ -24,20 +24,24 @@ export const CategoryFilter = ({ categories, filterDispatch }) => {
   }, []);
   return (
     <>
-      <p>Category</p>
-      {allCategories.map((category) => (
-        <div key={category._id}>
-          <label htmlFor={category.categoryName}>
-            <input
-              type="checkbox"
-              name={category.categoryName}
-              checked={categories.includes(category.categoryName)}
-              onChange={handleCategory}
-            />
-            {category.categoryName}
-          </label>
+      <div className="category-main-container">
+        <p className="filter-heading">Category</p>
+        <div className="category">
+          {allCategories.map((category) => (
+            <div key={category._id}>
+              <label htmlFor={category.categoryName} className="category-label">
+                <input
+                  type="checkbox"
+                  name={category.categoryName}
+                  checked={categories.includes(category.categoryName)}
+                  onChange={handleCategory}
+                />
+                <p className="category-name">{category.categoryName}</p>
+              </label>
+            </div>
+          ))}
         </div>
-      ))}
+      </div>
     </>
   );
 };

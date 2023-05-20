@@ -1,4 +1,4 @@
-// import "../filters/filters.css";
+import "../filters/filters.css";
 
 import { FilterContext } from "../../../context/FilterContext";
 

@@ -9,30 +9,34 @@ export const CollectionFilter = ({ collections, filterDispatch }) => {
   };
   return (
     <>
-      <p>Collections</p>
-      <div>
-        <label>
-          <input
-            type="checkbox"
-            name="best_seller"
-            value="best_seller"
-            checked={best_seller}
-            onChange={handleCollections}
-          />
-          Best sellers
-        </label>
-      </div>
-      <div>
-        <label>
-          <input
-            type="checkbox"
-            name="new_launch"
-            value="new_launch"
-            checked={new_launch}
-            onChange={handleCollections}
-          />
-          New Launches
-        </label>
+      <div className="collection-main-container">
+        <p className="filter-heading">Collections</p>
+        <div className="collection">
+          <div>
+            <label className="collection-label">
+              <input
+                type="checkbox"
+                name="best_seller"
+                value="best_seller"
+                checked={best_seller}
+                onChange={handleCollections}
+              />
+              <p className="collection-detail">Best sellers</p>
+            </label>
+          </div>
+          <div>
+            <label className="collection-label">
+              <input
+                type="checkbox"
+                name="new_launch"
+                value="new_launch"
+                checked={new_launch}
+                onChange={handleCollections}
+              />
+              <p className="collection-detail">New Launches</p>
+            </label>
+          </div>
+        </div>
       </div>
     </>
   );

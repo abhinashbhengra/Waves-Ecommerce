@@ -5,42 +5,46 @@ export const RatingFilter = ({ rating, filterDispatch }) => {
   };
   return (
     <>
-      <p>Rating</p>
-      <div>
-        <label>
-          <input
-            type="radio"
-            name="rating"
-            value={4.5}
-            checked={rating === 4.5}
-            onChange={handleRating}
-          />
-          4.5 stars & above
-        </label>
-      </div>
-      <div>
-        <label>
-          <input
-            type="radio"
-            name="rating"
-            value={4}
-            checked={rating === 4}
-            onChange={handleRating}
-          />
-          4 stars & above
-        </label>
-      </div>
-      <div>
-        <label>
-          <input
-            type="radio"
-            name="rating"
-            value={3}
-            checked={rating === 3}
-            onChange={handleRating}
-          />
-          3 stars & above
-        </label>
+      <div className="rating-main-container">
+        <p className="filter-heading">Rating</p>
+        <div className="rating">
+          <div>
+            <label className="rating-label">
+              <input
+                type="radio"
+                name="rating"
+                value={4.5}
+                checked={rating === 4.5}
+                onChange={handleRating}
+              />
+              <p className="rating-detail">4.5 stars & above</p>
+            </label>
+          </div>
+          <div>
+            <label className="rating-label">
+              <input
+                type="radio"
+                name="rating"
+                value={4}
+                checked={rating === 4}
+                onChange={handleRating}
+              />
+              <p className="rating-detail">4 stars & above</p>
+            </label>
+          </div>
+          <div>
+            <label className="rating-label">
+              <input
+                type="radio"
+                name="rating"
+                value={3}
+                checked={rating === 3}
+                onChange={handleRating}
+              />
+              <p className="rating-detail">3 stars & above</p>
+            </label>
+          </div>
+        </div>
       </div>
     </>
   );

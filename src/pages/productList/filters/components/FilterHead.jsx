@@ -4,8 +4,12 @@ export const FilterHead = ({ filterDispatch }) => {
   };
   return (
     <>
-      <p>Filter</p>
-      <button onClick={handleClearFilter}>Clear</button>
+      <div className="filterhead">
+        <p className="filter-heading">Filter</p>
+        <button className="filter-clear-button" onClick={handleClearFilter}>
+          Clear
+        </button>
+      </div>
     </>
   );
 };

@@ -1,4 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Sora:wght@700&display=swap");
 .filters-container {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.filter-heading {
+  font-family: "Sora", sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.6px;
+}
+
+.filterhead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.filter-clear-button {
+  border-style: none;
+  padding: 3px 15px;
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.6px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.price-container {
+  margin-bottom: 6px;
+}
+.price {
+  margin-top: 8px;
+}
+.price-range {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Roboto", sans-serif;
+  font-size: 11px;
+}
+
+.price-input {
+  border: 1px solid red;
+  /* height: 30px; */
+  width: 100%;
+}
+
+.category-main-container {
+  margin-bottom: 6px;
+}
+.category {
+  margin-top: 8px;
+}
+.category-label {
+  display: flex;
+  margin-bottom: 8px;
+}
+.category-name {
+  font-family: "Roboto", sans-serif;
+  font-size: 13px;
+  margin-left: 6px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+}
+
+.rating-main-container {
+  margin-bottom: 6px;
+}
+.rating {
+  margin-top: 8px;
+}
+.rating-label {
+  display: flex;
+  margin-bottom: 8px;
+}
+.rating-detail {
+  font-family: "Roboto", sans-serif;
+  font-size: 13px;
+  margin-left: 6px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+}
+
+.sort-main-container {
+  margin-bottom: 6px;
+}
+.sort {
+  margin-top: 8px;
+}
+.sort-label {
+  display: flex;
+  margin-bottom: 8px;
+}
+.sort-detail {
+  font-family: "Roboto", sans-serif;
+  font-size: 13px;
+  margin-left: 6px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+}
+
+.collection-main-container {
+  margin-bottom: 6px;
+}
+.collection {
+  margin-top: 8px;
+}
+.collection-label {
+  display: flex;
+  margin-bottom: 8px;
+}
+.collection-detail {
+  font-family: "Roboto", sans-serif;
+  font-size: 13px;
+  margin-left: 6px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: capitalize;
 }
