@@ -23,28 +23,38 @@ export const Login = () => {
     <>
       <Navbar />
       <div className="login-main-container">
-        <form onSubmit={handleLoginClick}>
-          <input
-            type="email"
-            name="email"
-            placeholder="E-mail"
-            value={user.email}
-            onChange={(e) =>
-              setUser((curr) => ({ ...curr, email: e.target.value }))
-            }
-          />
-          <input
-            type="password"
-            name="password"
-            placeholder="Password"
-            value={user.password}
-            onChange={(e) =>
-              setUser((curr) => ({ ...curr, password: e.target.value }))
-            }
-          />
-          <button type="submit">LOGIN</button>
-          <p onClick={() => navigate("/signup")}>Sign up</p>
-        </form>
+        <div className="login-section">
+          <p className="login-heading">Login</p>
+          <form onSubmit={handleLoginClick} className="login-form">
+            <input
+              type="email"
+              name="email"
+              placeholder="E-mail"
+              value={user.email}
+              onChange={(e) =>
+                setUser((curr) => ({ ...curr, email: e.target.value }))
+              }
+            />
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              value={user.password}
+              onChange={(e) =>
+                setUser((curr) => ({ ...curr, password: e.target.value }))
+              }
+            />
+            <button type="submit" className="login-button">
+              LOGIN
+            </button>
+
+            <p onClick={() => navigate("/signup")} className="signup-button">
+              Sign up
+            </p>
+
+            <p className="add-guest-button">Add Guest Credentials</p>
+          </form>
+        </div>
       </div>
     </>
   );
