@@ -48,7 +48,10 @@ export const Login = () => {
               LOGIN
             </button>
 
-            <p onClick={() => navigate("/signup")} className="signup-button">
+            <p
+              onClick={() => navigate("/signup")}
+              className="login-signup-button"
+            >
               Sign up
             </p>
 

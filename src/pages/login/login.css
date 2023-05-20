@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Sora:wght@700&display=swap");
 .login-main-container {
   /* padding-top: 8rem; */
-  border: 1px solid red;
   height: 100vh;
   background-color: #f9f9f9;
   display: flex;
@@ -54,7 +53,7 @@
 .login-button:hover {
   transform: scale(0.98);
 }
-.signup-button {
+.login-signup-button {
   text-align: center;
   color: #444444;
   font-family: "Roboto", sans-serif;
@@ -63,7 +62,7 @@
   text-decoration: underline;
   cursor: pointer;
 }
-.signup-button:hover {
+.login-signup-button:hover {
   color: #3b08ff;
 }
 .add-guest-button {
