@@ -33,7 +33,7 @@ export const AuthProvider = ({ children }) => {
         token: response.encodedToken,
       },
     });
-    navigate("/profile");
+    navigate("/");
   };
 
   const handleLogout = () => {

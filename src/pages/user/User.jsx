@@ -12,12 +12,14 @@ export const User = () => {
     <>
       <Navbar />
       <div className="user-main-container">
-        {token && (
-          <div>
-            <p>Hello! {authState.user.firstName}</p>
-            <button onClick={handleLogout}>Logout</button>
-          </div>
-        )}
+        <div className="user">
+          {token && (
+            <div>
+              <p>Hello! {authState.user.firstName}</p>
+              <button onClick={handleLogout}>Logout</button>
+            </div>
+          )}
+        </div>
       </div>
     </>
   );
