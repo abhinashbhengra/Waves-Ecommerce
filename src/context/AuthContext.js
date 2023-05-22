@@ -20,7 +20,11 @@ export const AuthProvider = ({ children }) => {
         token: response.encodedToken,
       },
     });
-    navigate(location?.state?.from?.pathname);
+    if (location?.state === null) {
+      navigate("/");
+    } else {
+      navigate(location?.state?.from?.pathname);
+    }
   };
 
   const handleSignup = async (user) => {

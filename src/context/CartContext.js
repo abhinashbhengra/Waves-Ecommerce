@@ -1,5 +1,9 @@
-import { createContext, useReducer } from "react";
+import { createContext, useContext, useReducer, useState } from "react";
 import { cartInitial, cartReducer } from "../reducers/cartReducer";
+import { AuthContext } from "./AuthContext";
+import { Navigate, useLocation, useNavigate } from "react-router-dom";
+import { addItems } from "../utils/cart/addItems";
+import { getItems } from "../utils/cart/getItems";
 
 export const CartContext = createContext({
   cartState: {},
@@ -8,9 +12,29 @@ export const CartContext = createContext({
 
 export const CartProvider = ({ children }) => {
   const [cartState, cartDispatch] = useReducer(cartReducer, cartInitial);
+  const [cartItems, setCartItems] = useState([]);
+  const { authState } = useContext(AuthContext);
+  const { token } = authState;
 
-  const addToCart = (product) => {
-    cartDispatch({ type: "ADD_TO_CART", payload: product });
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const addToCart = async (product) => {
+    if (token) {
+      const addedItems = await addItems(product, token);
+      setCartItems(addedItems);
+    } else {
+      navigate("/login");
+    }
+  };
+
+  const getCartItems = async () => {
+    if (token) {
+      const cartItems = await getItems(token);
+      setCartItems(cartItems);
+    } else {
+      console.log("something went wrong!!");
+    }
   };
 
   const removeFromCart = (selectId) => {
@@ -40,8 +64,10 @@ export const CartProvider = ({ children }) => {
 
   const value = {
     cartState,
+    cartItems,
     addToCart,
     removeFromCart,
+    getCartItems,
     decreaseQuantity,
     increaseQuantity,
   };
