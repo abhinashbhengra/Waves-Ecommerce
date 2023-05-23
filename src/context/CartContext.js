@@ -4,6 +4,7 @@ import { AuthContext } from "./AuthContext";
 import { Navigate, useLocation, useNavigate } from "react-router-dom";
 import { addItems } from "../utils/cart/addItems";
 import { getItems } from "../utils/cart/getItems";
+import { deleteItem } from "../utils/cart/deleteItem";
 
 export const CartContext = createContext({
   cartState: {},
@@ -37,30 +38,15 @@ export const CartProvider = ({ children }) => {
     }
   };
 
-  const removeFromCart = (selectId) => {
-    cartDispatch({ type: "REMOVE_FROM_CART", payload: selectId });
-  };
-
   // const changeItemQuantity = () =>{
   //   const
   // }
 
   const deleteFromCart = async (selectedId) => {
-    console.log("delete", selectedId);
+    // console.log("delete", selectedId);
     if (token) {
-      try {
-        const response = await fetch(`/api/user/cart/${selectedId}`, {
-          method: "DELETE",
-          headers: {
-            authorization: token,
-          },
-        });
-        const data = await response.json();
-        console.log("delte item", data);
-        setCartItems(data.cart);
-      } catch (e) {
-        console.log(e);
-      }
+      const updatedCartItem = await deleteItem(selectedId, token);
+      setCartItems(updatedCartItem);
     } else {
       console.log("Something went wrong!!");
     }
@@ -97,7 +83,6 @@ export const CartProvider = ({ children }) => {
     cartState,
     cartItems,
     addToCart,
-    removeFromCart,
     deleteFromCart,
     getCartItems,
     decreaseQuantity,
