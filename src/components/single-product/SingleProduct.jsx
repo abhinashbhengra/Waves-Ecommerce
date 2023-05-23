@@ -3,8 +3,12 @@ import "../single-product/singleProduct.css";
 import { CartContext } from "../../context/CartContext";
 
 export const SingleProduct = ({ product }) => {
-  const { removeFromCart, deleteFromCart, decreaseQuantity, increaseQuantity } =
-    useContext(CartContext);
+  const {
+    deleteFromCart,
+    changeItemQuantity,
+    decreaseQuantity,
+    increaseQuantity,
+  } = useContext(CartContext);
   // console.log(product);
 
   return (
@@ -29,13 +33,15 @@ export const SingleProduct = ({ product }) => {
         </div>
         <div className="quantity">
           <button
-            onClick={() => decreaseQuantity(product)}
-            disabled={product.quantity === 1}
+            onClick={() => changeItemQuantity(product._id, "decrement")}
+            disabled={product.qty === 1}
           >
             -
           </button>
-          <p>{product.quantity}</p>
-          <button onClick={() => increaseQuantity(product)}>+</button>
+          <p>{product.qty}</p>
+          <button onClick={() => changeItemQuantity(product._id, "increment")}>
+            +
+          </button>
         </div>
       </div>
       <div>
