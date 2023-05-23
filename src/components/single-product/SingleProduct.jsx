@@ -3,7 +3,7 @@ import "../single-product/singleProduct.css";
 import { CartContext } from "../../context/CartContext";
 
 export const SingleProduct = ({ product }) => {
-  const { removeFromCart, decreaseQuantity, increaseQuantity } =
+  const { removeFromCart, deleteFromCart, decreaseQuantity, increaseQuantity } =
     useContext(CartContext);
   // console.log(product);
 
@@ -39,7 +39,7 @@ export const SingleProduct = ({ product }) => {
         </div>
       </div>
       <div>
-        <button onClick={() => removeFromCart(product.id)}>delete</button>
+        <button onClick={() => deleteFromCart(product._id)}>delete</button>
       </div>
     </div>
   );

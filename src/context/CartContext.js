@@ -41,7 +41,32 @@ export const CartProvider = ({ children }) => {
     cartDispatch({ type: "REMOVE_FROM_CART", payload: selectId });
   };
 
+  // const changeItemQuantity = () =>{
+  //   const
+  // }
+
+  const deleteFromCart = async (selectedId) => {
+    console.log("delete", selectedId);
+    if (token) {
+      try {
+        const response = await fetch(`/api/user/cart/${selectedId}`, {
+          method: "DELETE",
+          headers: {
+            authorization: token,
+          },
+        });
+        const data = await response.json();
+        console.log("delte item", data);
+        setCartItems(data.cart);
+      } catch (e) {
+        console.log(e);
+      }
+    } else {
+      console.log("Something went wrong!!");
+    }
+  };
   const decreaseQuantity = (product) => {
+    console.log(product);
     const { id, quantity } = product;
     cartDispatch({
       type: "CHANGE_QUANTITY",
@@ -50,9 +75,15 @@ export const CartProvider = ({ children }) => {
         quantity: quantity - 1,
       },
     });
+    // console.log(id, quantity);
   };
   const increaseQuantity = (product) => {
-    const { id, quantity } = product;
+    const { id, qty } = product;
+    // const selectedProduct = cartItems.find(({ id }) => id === product.id);
+    const updatedProduct = cartItems.map((item) =>
+      item.id === id ? { ...item, qty: item.qty + 1 } : item
+    );
+    console.log(updatedProduct);
     cartDispatch({
       type: "CHANGE_QUANTITY",
       payload: {
@@ -67,6 +98,7 @@ export const CartProvider = ({ children }) => {
     cartItems,
     addToCart,
     removeFromCart,
+    deleteFromCart,
     getCartItems,
     decreaseQuantity,
     increaseQuantity,

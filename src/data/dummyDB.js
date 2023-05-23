@@ -1,6 +1,6 @@
 export const productDB = [
   {
-    id: 1,
+    _id: "1",
     title: "Audio-technica - ath - m50x",
     description: "Closed-Back Studio Headphone",
     price: 11999,
@@ -12,7 +12,7 @@ export const productDB = [
     _isNewLaunch: true,
   },
   {
-    id: 2,
+    _id: "2",
     title: "Ibanez 7 String",
     description: "description",
     price: 40000,
@@ -23,7 +23,7 @@ export const productDB = [
     _isNewLaunch: true,
   },
   {
-    id: 3,
+    _id: "3",
     title: "Cort 6 String",
     description: "description",
     price: 30000,
@@ -34,7 +34,7 @@ export const productDB = [
     _isNewLaunch: true,
   },
   {
-    id: 4,
+    _id: "4",
     title: "KZ Acoustics",
     description: "description",
     price: 25000,
@@ -47,7 +47,7 @@ export const productDB = [
     _isNewLaunch: true,
   },
   {
-    id: 5,
+    _id: "5",
     title: "Heading",
     description: "description",
     price: 10000,
@@ -58,7 +58,7 @@ export const productDB = [
     _isBestSeller: true,
   },
   {
-    id: 6,
+    _id: "6",
     title: "Heading",
     description: "description",
     price: 56000,
@@ -70,7 +70,7 @@ export const productDB = [
     _isBestSeller: true,
   },
   {
-    id: 7,
+    _id: "7",
     title: "Heading",
     description: "description",
     price: 45000,
@@ -80,7 +80,7 @@ export const productDB = [
     categoryName: "accessories",
   },
   {
-    id: 8,
+    _id: "8",
     title: "Heading",
     description: "description",
     price: 68000,
@@ -91,7 +91,7 @@ export const productDB = [
     _isBestSeller: true,
   },
   {
-    id: 9,
+    _id: "9",
     title: "Heading",
     description: "description",
     price: 43000,
@@ -102,7 +102,7 @@ export const productDB = [
     _isBestSeller: true,
   },
   {
-    id: 10,
+    _id: "`10",
     title: "Heading",
     description: "description",
     price: 32000,

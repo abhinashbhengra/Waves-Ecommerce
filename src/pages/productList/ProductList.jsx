@@ -21,7 +21,7 @@ const ProductList = () => {
         </div>
         <div className="products-list">
           {filteredData.map((product) => (
-            <ProductCard product={product} key={product.id} />
+            <ProductCard product={product} key={product._id} />
           ))}
         </div>
       </div>

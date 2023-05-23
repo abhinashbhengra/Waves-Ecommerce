@@ -44,7 +44,7 @@ export const ProductCard = ({ product }) => {
         </div>
       </div>
       <div>
-        {cartItems.find(({ id }) => +id === product.id) ? (
+        {cartItems.find(({ _id }) => _id === product._id) ? (
           <button onClick={() => navigate("/cart")} className="cart-button">
             Go to Cart
           </button>
