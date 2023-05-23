@@ -1,7 +1,6 @@
 import { createContext, useContext, useReducer, useState } from "react";
-import { cartInitial, cartReducer } from "../reducers/cartReducer";
 import { AuthContext } from "./AuthContext";
-import { Navigate, useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { addItems } from "../utils/cart/addItems";
 import { getItems } from "../utils/cart/getItems";
 import { deleteItem } from "../utils/cart/deleteItem";
@@ -13,7 +12,6 @@ export const CartContext = createContext({
 });
 
 export const CartProvider = ({ children }) => {
-  const [cartState, cartDispatch] = useReducer(cartReducer, cartInitial);
   const [cartItems, setCartItems] = useState([]);
   const { authState } = useContext(AuthContext);
   const { token } = authState;
@@ -58,7 +56,6 @@ export const CartProvider = ({ children }) => {
   };
 
   const value = {
-    cartState,
     cartItems,
     addToCart,
     deleteFromCart,

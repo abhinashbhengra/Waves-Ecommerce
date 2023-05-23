@@ -11,7 +11,7 @@ export const Cart = () => {
   const navigate = useNavigate();
 
   const total = cartItems.reduce((acc, curr) => {
-    return acc + curr.price * curr.quantity;
+    return acc + curr.price * curr.qty;
   }, 0);
   const handleExploreClick = () => {
     navigate("/products");

@@ -3,13 +3,7 @@ import "../single-product/singleProduct.css";
 import { CartContext } from "../../context/CartContext";
 
 export const SingleProduct = ({ product }) => {
-  const {
-    deleteFromCart,
-    changeItemQuantity,
-    decreaseQuantity,
-    increaseQuantity,
-  } = useContext(CartContext);
-  // console.log(product);
+  const { deleteFromCart, changeItemQuantity } = useContext(CartContext);
 
   return (
     <div className="single-product">
