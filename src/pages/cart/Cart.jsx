@@ -21,8 +21,6 @@ export const Cart = () => {
     getCartItems();
   }, []);
 
-  console.log(cartItems);
-
   return (
     <div>
       <Navbar />
@@ -36,7 +34,7 @@ export const Cart = () => {
           ) : (
             <div>
               {cartItems.map((product) => (
-                <SingleProduct product={product} key={product.id} />
+                <SingleProduct product={product} key={product._id} />
               ))}
             </div>
           )}
