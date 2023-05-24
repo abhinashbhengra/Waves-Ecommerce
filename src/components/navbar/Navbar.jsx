@@ -5,11 +5,16 @@ import { Link } from "react-router-dom";
 import { FilterContext } from "../../context/FilterContext";
 
 import { productDB } from "../../data/dummyDB";
+import { CartContext } from "../../context/CartContext";
+import { AuthContext } from "../../context/AuthContext";
 
 export const Navbar = () => {
   const { filterDispatch } = useContext(FilterContext);
   const [input, setInput] = useState("");
   const [searchProduct, setSearchProduct] = useState();
+  const { cartItems } = useContext(CartContext);
+  const { authState } = useContext(AuthContext);
+  const { token } = authState;
 
   const handleSearch = () => {
     const products = productDB.filter((prod) => prod.title.includes(input));
@@ -20,6 +25,7 @@ export const Navbar = () => {
   const handleFilter = () => {
     filterDispatch({ type: "RESET" });
   };
+  console.log(cartItems);
   return (
     <div className="nav-main-container">
       <div className="nav-container">
@@ -65,6 +71,7 @@ export const Navbar = () => {
                   src="https://ik.imagekit.io/u6itcrvxy/Nav_Icon/cart-shopping-shop-svgrepo-com.svg?updatedAt=1684518260440"
                   alt="cart"
                 />
+                {/* {token ? <p>{cartItems.length}</p> : <p>0</p>} */}
               </Link>
               <Link to="/wishlist">
                 <img
