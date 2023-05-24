@@ -23,7 +23,7 @@ export const NewLaunch = () => {
         </span>
         <div className="new_launch-products">
           {displayNewLaunch.map((product) => (
-            <div key={product.id}>
+            <div key={product._id}>
               <BestSellerCard product={product} />
             </div>
           ))}

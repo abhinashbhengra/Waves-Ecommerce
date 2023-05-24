@@ -15,7 +15,7 @@ export const BestSeller = () => {
         </span>
         <div className="best-container">
           {displayBestProducts.map((product) => (
-            <div className="best_seller-product" key={product.id}>
+            <div className="best_seller-product" key={product._id}>
               <div>
                 <img
                   className="best_seller-image"
