@@ -5,17 +5,17 @@ import { CartContext } from "../../context/CartContext";
 import { useNavigate } from "react-router-dom";
 
 export const ProductCard = ({ product }) => {
-  const { wishlistState, addToWishlist, removeFromWishlist } =
+  const { wishlistItems, addToWishlist, removeFromWishlist } =
     useContext(WishlistContext);
-  const { cartState, cartItems, addToCart } = useContext(CartContext);
+  const { cartItems, addToCart } = useContext(CartContext);
 
   const navigate = useNavigate();
 
   return (
     <div className="productCard-container">
       <div className="productCard-wishlist">
-        {wishlistState.wishlist.includes(product) ? (
-          <div onClick={() => removeFromWishlist(product.id)}>
+        {wishlistItems.find(({ _id }) => _id === product._id) ? (
+          <div onClick={() => removeFromWishlist(product._id)}>
             <img src="./images/filledheart.svg" alt="add_to_whislist" />
           </div>
         ) : (
