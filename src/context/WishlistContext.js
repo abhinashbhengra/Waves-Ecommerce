@@ -51,7 +51,7 @@ export const WishlistProvider = ({ children }) => {
     removeFromWishlist,
     getWishlistItem,
   };
-  console.log(wishlistItems);
+
   return (
     <WishlistContext.Provider value={value}>
       {children}
