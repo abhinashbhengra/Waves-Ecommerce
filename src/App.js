@@ -12,6 +12,7 @@ import { Login } from "./pages/login/Login";
 import { RequiresAuth } from "./components/RequiresAuth";
 import { SignUp } from "./pages/signup/SignUp";
 import Mockman from "mockman-js";
+import { ProductDetails } from "./components/prod-details-card/ProductDetails";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/products" element={<ProductList />} />
+        <Route path="/products/:productId" element={<ProductDetails />} />
         <Route element={<RequiresAuth />}>
           <Route path="/cart" element={<Cart />} />
           <Route path="/wishlist" element={<WishList />} />

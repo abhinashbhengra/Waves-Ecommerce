@@ -31,7 +31,7 @@ export const Navbar = () => {
       <div className="nav-container">
         <div>
           <Link to="/" onClick={handleFilter}>
-            <img className="logo" src="./images/wave-logo.png" alt="logo" />
+            <img className="logo" src="/images/wave-logo.png" alt="logo" />
           </Link>
         </div>
         <div className="search-container">

@@ -3,15 +3,29 @@ import "./productList.css";
 import { Navbar } from "../../components/navbar/Navbar";
 import { Filters } from "./filters/Filters";
 
-import { productDB } from "../../data/dummyDB";
 import { ProductCard } from "../../components/product-card/ProductCard";
 import { getFilteredData } from "../../utils/categories/getFilteredData";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { FilterContext } from "../../context/FilterContext";
 
 const ProductList = () => {
+  const [products, setProducts] = useState([]);
   const { filterState } = useContext(FilterContext);
-  const filteredData = getFilteredData(productDB, filterState);
+  const filteredData = getFilteredData(products, filterState);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await fetch("/api/products");
+        const data = await response.json();
+        setProducts(data.products);
+      } catch (e) {
+        console.log(e);
+      }
+    };
+    fetchProducts();
+  }, []);
+
   return (
     <div>
       <Navbar />

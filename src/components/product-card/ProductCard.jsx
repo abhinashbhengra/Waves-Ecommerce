@@ -11,6 +11,11 @@ export const ProductCard = ({ product }) => {
 
   const navigate = useNavigate();
 
+  const showProductDetails = () => {
+    console.log("product details");
+    navigate(`/products/${product._id}`);
+  };
+
   return (
     <div className="productCard-container">
       <div className="productCard-wishlist">
@@ -24,7 +29,7 @@ export const ProductCard = ({ product }) => {
           </div>
         )}
       </div>
-      <div className="productCard-image">
+      <div className="productCard-image" onClick={showProductDetails}>
         <img src={product.image} />
       </div>
       <div>
