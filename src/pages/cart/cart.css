@@ -1,12 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Sora:wght@700&display=swap");
+
 .cart-container {
-  height: 95vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 4rem;
+  height: 96vh;
+  margin-top: 4rem;
+  /* border: 1px solid red;  */
 }
-.products {
-  border: 1xp solid red;
+.cart-main-heading {
+  font-family: "Sora", sans-serif;
+  font-size: 46px;
+  font-weight: 700;
+  padding-top: 3rem;
+  text-align: center;
+}
+.cart-product-details {
+  border: 1px solid red;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 6rem;
 }
 
 .checkout {

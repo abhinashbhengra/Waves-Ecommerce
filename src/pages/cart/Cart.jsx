@@ -25,7 +25,8 @@ export const Cart = () => {
     <div>
       <Navbar />
       <div className="cart-container">
-        <div className="products">
+        <p className="cart-main-heading">Cart</p>
+        <div className="cart-product-details">
           {cartItems.length < 1 ? (
             <div>
               <p>Oops! Empty cart.</p>
@@ -38,28 +39,29 @@ export const Cart = () => {
               ))}
             </div>
           )}
-        </div>
-        {cartItems.length > 0 && (
-          <div className="checkout">
-            <div>
-              <h4>Price Details</h4>
-            </div>
-            <div className="p-flex">
-              <div>Price</div>
-              <div>499</div>
-            </div>
-            <div className="p-flex">
-              <div>Discount</div>
-              <div>-99</div>
-            </div>
-            <div className="p-flex">
+
+          {cartItems.length > 0 && (
+            <div className="checkout">
               <div>
-                <b>Total</b>
+                <h4>Price Details</h4>
               </div>
-              <div>{total}</div>
+              <div className="p-flex">
+                <div>Price</div>
+                <div>499</div>
+              </div>
+              <div className="p-flex">
+                <div>Discount</div>
+                <div>-99</div>
+              </div>
+              <div className="p-flex">
+                <div>
+                  <b>Total</b>
+                </div>
+                <div>{total}</div>
+              </div>
             </div>
-          </div>
-        )}
+          )}
+        </div>
       </div>
     </div>
   );
