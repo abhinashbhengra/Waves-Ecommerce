@@ -1,13 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Sora:wght@700&display=swap");
 .single-product {
-  /* border: 1px solid purple; */
   width: 600px;
   margin: 10px 0;
   display: flex;
   justify-content: space-between;
-}
-.single-product-img-desc {
-  /* border: 1px solid red; */
 }
 .single-product-img {
   width: 95px;
@@ -62,4 +58,16 @@
   border-style: none;
   width: 14px;
   cursor: pointer;
+}
+.single-product-delete-icon {
+  width: 14px;
+  cursor: pointer;
+}
+.delete-wishlist-button {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.delete-wishlist-button img {
+  width: 20px;
 }

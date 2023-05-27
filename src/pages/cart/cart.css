@@ -13,7 +13,6 @@
   text-align: center;
 }
 .cart-product-details {
-  border: 1px solid red;
   display: flex;
   justify-content: space-between;
   padding: 0 6rem;
