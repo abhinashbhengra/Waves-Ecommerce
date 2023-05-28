@@ -13,6 +13,9 @@ export const Cart = () => {
   const total = cartItems.reduce((acc, curr) => {
     return acc + curr.price * curr.qty;
   }, 0);
+
+  const discount = 99;
+
   const handleExploreClick = () => {
     navigate("/products");
   };
@@ -42,23 +45,33 @@ export const Cart = () => {
 
           {cartItems.length > 0 && (
             <div className="checkout">
-              <div>
-                <h4>Price Details</h4>
-              </div>
               <div className="p-flex">
-                <div>Price</div>
-                <div>499</div>
-              </div>
-              <div className="p-flex">
-                <div>Discount</div>
-                <div>-99</div>
+                <div>
+                  <p className="checkout-subtotal-heading">Subtotal</p>
+                </div>
+                <div>
+                  <p className="checkout-subtotal-price">₹ {total}</p>
+                </div>
               </div>
               <div className="p-flex">
                 <div>
-                  <b>Total</b>
+                  <p className="checkout-discount-heading">Discount</p>
                 </div>
-                <div>{total}</div>
+                <div>
+                  <p className="checkout-discount-price">-99</p>
+                </div>
               </div>
+              <div className="p-flex">
+                <div>
+                  <p className="checkout-total-heading">Total</p>
+                </div>
+                <div>
+                  <p className="checkout-total-price">₹ {total - discount}</p>
+                </div>
+              </div>
+              <button className="checkout-button">
+                <p>checkout</p>
+              </button>
             </div>
           )}
         </div>

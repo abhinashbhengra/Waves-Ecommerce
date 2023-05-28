@@ -4,6 +4,8 @@
   margin: 10px 0;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  /* border: 1px solid red; */
 }
 .single-product-img {
   width: 95px;
@@ -11,7 +13,7 @@
 }
 .single-product-desc {
   /* border: 1px solid green; */
-  width: 400px;
+  width: 300px;
 }
 .single-product-heading {
   font-family: "Roboto", sans-serif;
