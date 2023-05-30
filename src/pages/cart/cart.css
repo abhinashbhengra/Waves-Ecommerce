@@ -78,7 +78,7 @@
   padding: 17px 40px;
   border-style: none;
   border-radius: 60px;
-  background-color: #3b08fe;
+  /* background-color: #3b08fe; */
   cursor: pointer;
   transition: transform 0.2s;
 }
