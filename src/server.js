@@ -1,10 +1,5 @@
 import { Server, Model, RestSerializer } from "miragejs";
 import {
-  addNewAddressHandler,
-  getAllAddressesHandler,
-  removeAddressHandler,
-} from "./backend/controllers/AddressController";
-import {
   loginHandler,
   signupHandler,
 } from "./backend/controllers/AuthController";
@@ -18,7 +13,6 @@ import {
   getAllCategoriesHandler,
   getCategoryHandler,
 } from "./backend/controllers/CategoryController";
-import { getAllCouponsHandler } from "./backend/controllers/CouponController";
 import {
   getAllProductsHandler,
   getProductHandler,
@@ -28,9 +22,16 @@ import {
   getWishlistItemsHandler,
   removeItemFromWishlistHandler,
 } from "./backend/controllers/WishlistController";
+import {
+  getAddressHandler,
+  addAddressHandler,
+  removeAddressHandler,
+  updateAddressHandler,
+} from "./backend/controllers/AddressController";
 import { categories } from "./backend/db/categories";
 import { products } from "./backend/db/products";
 import { users } from "./backend/db/users";
+import { v4 as uuid } from "uuid";
 
 export function makeServer({ environment = "development" } = {}) {
   return new Server({
@@ -56,7 +57,24 @@ export function makeServer({ environment = "development" } = {}) {
       });
 
       users.forEach((item) =>
-        server.create("user", { ...item, cart: [], wishlist: [] })
+        server.create("user", {
+          ...item,
+          cart: [],
+          wishlist: [],
+          address: [
+            {
+              _id: uuid(),
+              name: "Shelly Burton",
+              street:
+                "E045 , B.S Ring Road, Near Taj Hotel - 4th Floor, Osho Kabir",
+              city: "Mumbai",
+              state: "Maharashtra",
+              country: "India",
+              zipCode: "784411",
+              mobile: "8877665544",
+            },
+          ],
+        })
       );
 
       categories.forEach((item) => server.create("category", { ...item }));
@@ -76,9 +94,6 @@ export function makeServer({ environment = "development" } = {}) {
       this.get("/categories", getAllCategoriesHandler.bind(this));
       this.get("/categories/:categoryId", getCategoryHandler.bind(this));
 
-      // coupons route (public)
-      this.get("/coupon", getAllCouponsHandler.bind(this));
-
       // cart routes (private)
       this.get("/user/cart", getCartItemsHandler.bind(this));
       this.post("/user/cart", addItemToCartHandler.bind(this));
@@ -97,8 +112,9 @@ export function makeServer({ environment = "development" } = {}) {
       );
 
       // address routes (private)
-      this.get("/user/addresses", getAllAddressesHandler.bind(this));
-      this.post("/user/address", addNewAddressHandler.bind(this));
+      this.get("/user/address", getAddressHandler.bind(this));
+      this.post("/user/address", addAddressHandler.bind(this));
+      this.post("/user/address/:addressId", updateAddressHandler.bind(this));
       this.delete("/user/address/:addressId", removeAddressHandler.bind(this));
     },
   });

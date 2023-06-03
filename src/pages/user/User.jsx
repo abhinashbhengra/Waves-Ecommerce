@@ -11,14 +11,13 @@ export const User = () => {
   useEffect(() => {
     const fetchaddress = async () => {
       try {
-        console.log("address");
+        console.log(token);
         const response = await fetch("/api/user/address", {
           method: "GET",
           headers: {
             authorization: token,
           },
         });
-        console.log("add", response);
         const data = await response.json();
 
         console.log("address", data);
