@@ -64,14 +64,13 @@ export function makeServer({ environment = "development" } = {}) {
           address: [
             {
               _id: uuid(),
-              name: "Shelly Burton",
-              street:
-                "E045 , B.S Ring Road, Near Taj Hotel - 4th Floor, Osho Kabir",
-              city: "Mumbai",
-              state: "Maharashtra",
+              name: "Adarsh Balika",
+              street: "Opp. KFC Sandalwood - 4th Floor",
+              city: "Ranchi",
+              state: "Jharkhand",
               country: "India",
-              zipCode: "784411",
-              mobile: "8877665544",
+              zipCode: "834001",
+              mobile: "9474838389",
             },
           ],
         })
