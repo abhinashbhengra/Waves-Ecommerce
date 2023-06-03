@@ -15,8 +15,9 @@
 .cart-product-details {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 0 6rem;
-  /* border: 1px solid red; */
+  border: 1px solid red;
 }
 
 .checkout {
@@ -96,4 +97,14 @@
 .checkout-button:hover {
   transform: scale(0.98);
   background-color: #555555;
+}
+
+.empty-carty-description {
+  border: 1px solid red;
+  height: 75vh;
+  width: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }

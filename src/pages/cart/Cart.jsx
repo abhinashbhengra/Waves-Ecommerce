@@ -31,7 +31,7 @@ export const Cart = () => {
         <p className="cart-main-heading">Cart</p>
         <div className="cart-product-details">
           {cartItems.length < 1 ? (
-            <div>
+            <div className="empty-carty-descriptio">
               <p>Oops! Empty cart.</p>
               <button onClick={handleExploreClick}>Explore</button>
             </div>
