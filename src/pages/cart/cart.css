@@ -17,7 +17,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 6rem;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 .checkout {
@@ -100,7 +100,7 @@
 }
 
 .empty-carty-description {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   height: 75vh;
   width: 100vh;
   display: flex;

@@ -1,7 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Sora:wght@700&display=swap");
+
+.tab-container {
+  padding-top: 6rem;
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+}
+.profile-tab {
+  cursor: pointer;
+}
+.address-tab {
+  cursor: pointer;
+}
+
 .user-main-container {
-  height: 100vh;
+  height: 85vh;
   background-color: #f9f9f9;
   display: flex;
   justify-content: center;
-  padding-top: 9rem;
+  padding-top: 3rem;
+}
+
+.profile-section {
+  /* border: 1px solid red; */
+}
+.profile-heading {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+}
+.profile-details p {
+  padding: 6px;
+  color: #444444;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+}
+.profile-details button {
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-top: 1rem;
+  cursor: pointer;
+  padding: 14px 30px;
+  border-style: none;
+  border-radius: 40px;
+  color: #ffff;
+  background-color: #444444;
+  transition: transform 0.2s;
+}
+.profile-details button:hover {
+  transform: scale(0.96);
 }
