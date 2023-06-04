@@ -26,6 +26,7 @@ export const User = () => {
           },
         });
         const data = await response.json();
+        setAddress(data.address);
 
         console.log("address", data.address[0]);
       } catch (e) {
@@ -73,13 +74,32 @@ export const User = () => {
         </div>
       ) : (
         <div className="user-main-container">
-          <div className="user">
+          <div className="address-button-container">
             {token && (
-              <div>
-                <p>Address {authState.user.firstName}</p>
-                <button onClick={handleLogout}>Logout</button>
+              <div className="address-main-container">
+                {address.map(
+                  ({ _id, name, street, zipCode, state, city, country }) => (
+                    <div key={_id} className="address-container">
+                      <p className="add-user-name">{name}</p>
+                      <p>{street}</p>
+                      <p>
+                        {zipCode} {city} {state}
+                      </p>
+                      <p>{country}</p>
+                      <div className="address-button">
+                        <div className="edit-button">
+                          <p>Edit</p>
+                        </div>
+                        <div className="delete-button">Delete</div>
+                      </div>
+                    </div>
+                  )
+                )}
               </div>
             )}
+            <div className="add-address-button">
+              <p>add address</p>
+            </div>
           </div>
         </div>
       )}

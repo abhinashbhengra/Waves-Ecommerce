@@ -20,7 +20,11 @@
   justify-content: center;
   padding-top: 3rem;
 }
-
+.profile-section {
+  border: 1px solid #e3e3e3;
+  padding: 26px 75px;
+  border-radius: 5px;
+}
 .profile-heading {
   text-align: center;
   margin-bottom: 2rem;
@@ -42,7 +46,7 @@
   text-transform: uppercase;
   margin-top: 1rem;
   cursor: pointer;
-  padding: 14px 30px;
+  padding: 12px 25px;
   border-style: none;
   border-radius: 40px;
   color: #ffff;
@@ -51,4 +55,74 @@
 }
 .profile-details button:hover {
   transform: scale(0.96);
+}
+
+.address-main-container {
+  /* border: 1px solid red; */
+  display: flex;
+  gap: 6px;
+
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  line-height: 24px;
+  color: #444444;
+}
+.address-container {
+  border: 1px solid #e3e3e3;
+  width: 350px;
+  padding: 1rem;
+  border-radius: 5px;
+}
+.address-button {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 6px;
+}
+.edit-button p {
+  color: #7a7a7a;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.delete-button {
+  color: #7a7a7a;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.add-user-name {
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.add-address-button {
+  text-align: center;
+  margin-top: 5rem;
+  height: 56px;
+  width: 200px;
+  border-style: none;
+  border-radius: 60px;
+  background-color: #3b08fe;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.add-address-button p {
+  padding: 17px 10px;
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  line-height: 22.4px;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+.add-address-button:hover {
+  transform: scale(0.98);
+  background-color: #555555;
 }
