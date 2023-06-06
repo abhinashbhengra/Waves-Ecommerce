@@ -4,11 +4,26 @@ import { useContext, useEffect, useState } from "react";
 import { Navbar } from "../../components/navbar/Navbar";
 import { AuthContext } from "../../context/AuthContext";
 
+import { AddressTab } from "../../components/addressTab/AddressTab";
+
 export const User = () => {
   const { authState, handleLogout } = useContext(AuthContext);
   const { token } = authState;
   const [address, setAddress] = useState();
   const [tab, setTab] = useState("profile");
+  const [displayAddressTab, setDisplayAddressTab] = useState(false);
+
+  const formValue = {
+    name: "",
+    street: "",
+    city: "",
+    state: "",
+    country: "",
+    zipCode: "",
+    mobile: "",
+  };
+  const [formDisplay, setFormDisplay] = useState(false);
+  const [addressForm, setAddressForm] = useState(formValue);
 
   const handleTab = (type) => {
     // console.log(type);
@@ -78,7 +93,16 @@ export const User = () => {
             {token && (
               <div className="address-main-container">
                 {address.map(
-                  ({ _id, name, street, zipCode, state, city, country }) => (
+                  ({
+                    _id,
+                    name,
+                    street,
+                    zipCode,
+                    state,
+                    city,
+                    country,
+                    mobile,
+                  }) => (
                     <div key={_id} className="address-container">
                       <p className="add-user-name">{name}</p>
                       <p>{street}</p>
@@ -86,6 +110,7 @@ export const User = () => {
                         {zipCode} {city} {state}
                       </p>
                       <p>{country}</p>
+                      <p>Mobile : {mobile}</p>
                       <div className="address-button">
                         <div className="edit-button">
                           <p>Edit</p>
@@ -101,6 +126,15 @@ export const User = () => {
               <p>add address</p>
             </div>
           </div>
+          <AddressTab
+            token={token}
+            addressForm={addressForm}
+            setAddressForm={setAddressForm}
+            formDisplay={formDisplay}
+            setFormDisplay={setFormDisplay}
+            formValue={formValue}
+            setAddress={setAddress}
+          />
         </div>
       )}
     </>

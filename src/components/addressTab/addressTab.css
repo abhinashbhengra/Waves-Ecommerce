@@ -1,0 +1,20 @@
+.address-form {
+  border: 1px solid #e3e3e3;
+  border-radius: 5px;
+  width: 600px;
+  height: fit-content;
+  padding: 1rem 3rem;
+}
+
+.form-input {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.form-input > input {
+  padding: 16px 20px;
+  border: 1px solid #e3e3e3;
+  border-radius: 8px;
+}
