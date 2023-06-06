@@ -45,32 +45,30 @@ export const Cart = () => {
 
           {cartItems.length > 0 && (
             <div className="checkout">
-              <div className="p-flex">
-                <div>
-                  <p className="checkout-subtotal-heading">Subtotal</p>
+              <p className="price-details-heading">Price Details</p>
+              {cartItems.map((product) => (
+                <div className="p-flex">
+                  <div>
+                    <p className="checkout-subtotal-heading">
+                      {product.title} ({product.qty})
+                    </p>
+                  </div>
+                  <div>
+                    <p className="checkout-subtotal-price">₹ {product.price}</p>
+                  </div>
                 </div>
-                <div>
-                  <p className="checkout-subtotal-price">₹ {total}</p>
-                </div>
-              </div>
-              <div className="p-flex">
-                <div>
-                  <p className="checkout-discount-heading">Discount</p>
-                </div>
-                <div>
-                  <p className="checkout-discount-price">-99</p>
-                </div>
-              </div>
+              ))}
+              <div className="break"></div>
               <div className="p-flex">
                 <div>
                   <p className="checkout-total-heading">Total</p>
                 </div>
                 <div>
-                  <p className="checkout-total-price">₹ {total - discount}</p>
+                  <p className="checkout-total-price">₹ {total}</p>
                 </div>
               </div>
               <button className="checkout-button">
-                <p>checkout</p>
+                <p>proceed to checkout</p>
               </button>
             </div>
           )}

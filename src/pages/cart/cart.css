@@ -23,7 +23,7 @@
 .checkout {
   border: 1px solid #e3e3e3;
   width: 400px;
-  height: 300px;
+  /* height: 300px; */
   padding: 40px 48px;
   border-radius: 10px;
   display: flex;
@@ -34,6 +34,13 @@
 .p-flex {
   display: flex;
   justify-content: space-between;
+}
+
+.price-details-heading {
+  font-family: "Sora", sans-serif;
+  font-size: 18px;
+  line-height: 22.4px;
+  color: #444444;
 }
 
 .checkout-subtotal-heading {
@@ -107,4 +114,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.break {
+  height: 2px;
 }
