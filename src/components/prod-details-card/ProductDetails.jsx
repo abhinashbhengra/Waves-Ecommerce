@@ -13,7 +13,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 export const ProductDetails = () => {
-  const [product, setProduct] = useState({});
+  const [product, setProduct] = useState();
   const { wishlistItems, removeFromWishlist, addToWishlist } =
     useContext(WishlistContext);
   const { cartItems, addToCart } = useContext(CartContext);
@@ -51,7 +51,7 @@ export const ProductDetails = () => {
     });
   };
   const handleRemoveFromWishlist = (productId) => {
-    addToWishlist(productId);
+    removeFromWishlist(productId);
     toast.error("Removed From Wishlist", {
       position: "bottom-right",
       autoClose: 1500,
@@ -78,7 +78,7 @@ export const ProductDetails = () => {
     };
 
     fetchProduct();
-  }, []);
+  }, [productId]);
 
   return (
     <>
@@ -102,25 +102,25 @@ export const ProductDetails = () => {
         <div className="productDetails-main-container">
           <div className="productDetails-container">
             <div className="productDetails-image">
-              <img src={product.image} />
+              <img src={product?.image} />
             </div>
             <div className="productDetails-section">
               <div className="productDetails-brand">
                 <p>AUDIO-TECHNICA</p>
               </div>
               <div className="productDetails-heading">
-                <p>{product.title}</p>
+                <p>{product?.title}</p>
               </div>
               <div className="productDetails-description">
-                <p>{product.description}</p>
+                <p>{product?.description}</p>
               </div>
               <div className="break"></div>
               <div className="price-rating-container">
                 <div className="productDetails-price">
-                  <p>₹ {product.price} </p>
+                  <p>₹ {product?.price} </p>
                 </div>
                 <div className="productDetails-rating">
-                  <p>{product.rating} </p>
+                  <p>{product?.rating} </p>
                   <span>
                     <img
                       src="https://ik.imagekit.io/u6itcrvxy/Nav_Icon/star-c.png?updatedAt=1684993521625"

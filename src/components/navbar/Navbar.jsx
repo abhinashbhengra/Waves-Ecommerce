@@ -1,7 +1,7 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import "../navbar/navbar.css";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FilterContext } from "../../context/FilterContext";
 
 import { productDB } from "../../data/dummyDB";
@@ -11,21 +11,58 @@ import { AuthContext } from "../../context/AuthContext";
 export const Navbar = () => {
   const { filterDispatch } = useContext(FilterContext);
   const [input, setInput] = useState("");
+  const [products, setProducts] = useState([]);
   const [searchProduct, setSearchProduct] = useState();
   const { cartItems } = useContext(CartContext);
   const { authState } = useContext(AuthContext);
   const { token } = authState;
 
+  const navigate = useNavigate();
+
   const handleSearch = () => {
-    const products = productDB.filter((prod) => prod.title.includes(input));
-    setSearchProduct(products);
-    setInput("");
+    const searchedProduct = products.filter((prod) =>
+      prod.title.toLowerCase().includes(input.toLowerCase())
+    );
+
+    setSearchProduct(searchedProduct);
+
+    // setInput("");
   };
 
   const handleFilter = () => {
     filterDispatch({ type: "RESET" });
   };
-  console.log(cartItems);
+
+  const showProductDetails = (productId) => {
+    navigate(`/products/${productId}`);
+  };
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await fetch("/api/products");
+        const data = await response.json();
+        setProducts(data.products);
+      } catch (e) {
+        console.log(e);
+      }
+    };
+    fetchProducts();
+  }, []);
+
+  useEffect(() => {
+    let id;
+    id = setTimeout(() => {
+      handleSearch();
+    }, 500);
+
+    return () => {
+      clearTimeout(id);
+    };
+  }, [input]);
+
+  console.log("search prod", searchProduct);
+  console.log("input length", input.length);
   return (
     <div className="nav-main-container">
       <div className="nav-container">
@@ -46,14 +83,27 @@ export const Navbar = () => {
               />
             </label>
           </div>
-          <div className="display-search">
-            {searchProduct &&
-              searchProduct.map((product) => (
-                <div key={product.id}>
-                  <p>{product.title}</p>
-                </div>
-              ))}
-          </div>
+          {input.length !== 0 && (
+            <div className="display-search">
+              {searchProduct.length !== 0
+                ? searchProduct.map((product) => (
+                    <div
+                      key={product._id}
+                      className="search-product-section"
+                      onClick={() => showProductDetails(product._id)}
+                    >
+                      <div className="image-title-search">
+                        <img src={product.image} alt={product.title} />
+                        <p>{product.title}</p>
+                      </div>
+                      <div className="search-product-price">
+                        <p>₹ {product.price}</p>
+                      </div>
+                    </div>
+                  ))
+                : "No result"}
+            </div>
+          )}
         </div>
         <div className="links-contaiiner">
           <div>

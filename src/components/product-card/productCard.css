@@ -12,7 +12,7 @@
   position: absolute;
   top: 18px;
   right: 17px;
-  z-index: 1;
+  /* z-index: 1; */
 }
 .productCard-wishlist:hover {
   cursor: pointer;
