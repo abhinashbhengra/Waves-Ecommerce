@@ -13,3 +13,10 @@
   flex-wrap: wrap;
   overflow: scroll;
 }
+.loader-container {
+  display: flex;
+  height: 60vh;
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
+}
