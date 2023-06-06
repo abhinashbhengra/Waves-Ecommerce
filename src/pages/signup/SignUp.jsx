@@ -10,11 +10,23 @@ export const SignUp = () => {
     lastName: "",
     email: "",
     password: "",
+    confirmPassword: "",
   });
 
   const { handleSignup } = useContext(AuthContext);
 
   const navigate = useNavigate();
+
+  const handleDummyCredentials = () => {
+    setUser((curr) => ({
+      ...curr,
+      firstName: "Abhinash",
+      lastName: "Bhengra",
+      email: "abhinash@gmail.com",
+      password: "abhinash@123",
+      confirmPassword: "abhinash@123",
+    }));
+  };
 
   const handleSignupClick = (e) => {
     e.preventDefault();
@@ -64,6 +76,18 @@ export const SignUp = () => {
                 setUser((curr) => ({ ...curr, password: e.target.value }))
               }
             />
+            <input
+              type="Password"
+              name="confirmPassword"
+              placeholder="Confirm Password"
+              value={user.confirmPassword}
+              onChange={(e) =>
+                setUser((curr) => ({
+                  ...curr,
+                  confirmPassword: e.target.value,
+                }))
+              }
+            />
             <button type="submit" className="signup-button">
               CREATE ACCOUNT
             </button>
@@ -73,6 +97,9 @@ export const SignUp = () => {
               className="signup-login-button"
             >
               Login
+            </p>
+            <p className="add-guest-button" onClick={handleDummyCredentials}>
+              Dummy Credentials
             </p>
           </form>
         </div>
