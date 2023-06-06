@@ -22,11 +22,34 @@ export const User = () => {
     zipCode: "",
     mobile: "",
   };
-  const [formDisplay, setFormDisplay] = useState(false);
   const [addressForm, setAddressForm] = useState(formValue);
 
   const handleTab = (type) => {
     type === "address" ? setTab("address") : setTab("profile");
+  };
+
+  const editAddress = (
+    _id,
+    name,
+    street,
+    city,
+    state,
+    country,
+    zipCode,
+    mobile
+  ) => {
+    setDisplayAddressTab(true);
+    setAddressForm((form) => ({
+      ...form,
+      _id,
+      name,
+      street,
+      city,
+      state,
+      country,
+      zipCode,
+      mobile,
+    }));
   };
 
   const deleteAddress = async (addressId) => {
@@ -44,7 +67,7 @@ export const User = () => {
     }
   };
 
-  const addAdress = () => {
+  const addAdressHandler = () => {
     setDisplayAddressTab(true);
     setAddressForm(formValue);
   };
@@ -110,8 +133,6 @@ export const User = () => {
               token={token}
               addressForm={addressForm}
               setAddressForm={setAddressForm}
-              formDisplay={formDisplay}
-              setFormDisplay={setFormDisplay}
               formValue={formValue}
               setAddress={setAddress}
               setDisplayAddressTab={setDisplayAddressTab}
@@ -125,10 +146,10 @@ export const User = () => {
                       _id,
                       name,
                       street,
-                      zipCode,
-                      state,
                       city,
+                      state,
                       country,
+                      zipCode,
                       mobile,
                     }) => (
                       <div key={_id} className="address-container">
@@ -141,7 +162,22 @@ export const User = () => {
                         <p>Mobile : {mobile}</p>
                         <div className="address-button">
                           <div className="edit-button">
-                            <p>Edit</p>
+                            <p
+                              onClick={() =>
+                                editAddress(
+                                  _id,
+                                  name,
+                                  street,
+                                  city,
+                                  state,
+                                  country,
+                                  zipCode,
+                                  mobile
+                                )
+                              }
+                            >
+                              Edit
+                            </p>
                           </div>
                           <div
                             className="delete-button"
@@ -155,7 +191,7 @@ export const User = () => {
                   )}
                 </div>
               )}
-              <div className="add-address-button" onClick={addAdress}>
+              <div className="add-address-button" onClick={addAdressHandler}>
                 <p>add address</p>
               </div>
             </div>

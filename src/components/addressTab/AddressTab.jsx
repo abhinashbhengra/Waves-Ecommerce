@@ -4,8 +4,6 @@ export const AddressTab = ({
   addressForm,
   setAddressForm,
   setAddress,
-  formDisplay,
-  setFormDisplay,
   formValue,
   setDisplayAddressTab,
   token,
@@ -18,9 +16,9 @@ export const AddressTab = ({
   const saveHandler = async (e) => {
     e.preventDefault();
     setDisplayAddressTab(false);
+
     const postAddress = async () => {
       try {
-        console.log(token);
         const response = await fetch("/api/user/address", {
           method: "POST",
           headers: {
@@ -34,7 +32,23 @@ export const AddressTab = ({
         console.log(e);
       }
     };
-    postAddress();
+
+    const updateAddress = async () => {
+      try {
+        const response = await fetch(`/api/user/address/${addressForm._id}`, {
+          method: "POST",
+          headers: {
+            authorization: token,
+          },
+          body: JSON.stringify({ address: addressForm }),
+        });
+        const data = await response.json();
+        setAddress(data.address);
+      } catch (e) {
+        console.log(e);
+      }
+    };
+    addressForm._id ? updateAddress() : postAddress();
   };
 
   const cancleHandler = (e) => {
@@ -56,7 +70,6 @@ export const AddressTab = ({
       mobile: "12345678",
     }));
   };
-  console.log("new add", addressForm);
   return (
     <>
       <form className="address-form" onSubmit={(e) => saveHandler(e)}>
