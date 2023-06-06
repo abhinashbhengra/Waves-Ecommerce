@@ -173,7 +173,7 @@ export const Checkout = () => {
                     {checkoutAddress.state}
                   </p>
                   <p>{checkoutAddress.country}</p>
-                  <p>Mobile : {checkoutAddress.mobile}</p>
+                  <p>{checkoutAddress.mobile}</p>
                 </div>
                 <div className="break"></div>
 
