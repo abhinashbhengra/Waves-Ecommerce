@@ -26,14 +26,27 @@ export const User = () => {
   const [addressForm, setAddressForm] = useState(formValue);
 
   const handleTab = (type) => {
-    // console.log(type);
     type === "address" ? setTab("address") : setTab("profile");
+  };
+
+  const deleteAddress = async (addressId) => {
+    try {
+      const response = await fetch(`/api/user/address/${addressId}`, {
+        method: "DELETE",
+        headers: {
+          authorization: token,
+        },
+      });
+      const data = await response.json();
+      setAddress(data.address);
+    } catch (e) {
+      console.log(e);
+    }
   };
 
   useEffect(() => {
     const fetchaddress = async () => {
       try {
-        console.log(token);
         const response = await fetch("/api/user/address", {
           method: "GET",
           headers: {
@@ -42,8 +55,6 @@ export const User = () => {
         });
         const data = await response.json();
         setAddress(data.address);
-
-        console.log("address", data.address[0]);
       } catch (e) {
         console.log(e);
       }
@@ -89,52 +100,64 @@ export const User = () => {
         </div>
       ) : (
         <div className="user-main-container">
-          <div className="address-button-container">
-            {token && (
-              <div className="address-main-container">
-                {address.map(
-                  ({
-                    _id,
-                    name,
-                    street,
-                    zipCode,
-                    state,
-                    city,
-                    country,
-                    mobile,
-                  }) => (
-                    <div key={_id} className="address-container">
-                      <p className="add-user-name">{name}</p>
-                      <p>{street}</p>
-                      <p>
-                        {zipCode} {city} {state}
-                      </p>
-                      <p>{country}</p>
-                      <p>Mobile : {mobile}</p>
-                      <div className="address-button">
-                        <div className="edit-button">
-                          <p>Edit</p>
+          {displayAddressTab ? (
+            <AddressTab
+              token={token}
+              addressForm={addressForm}
+              setAddressForm={setAddressForm}
+              formDisplay={formDisplay}
+              setFormDisplay={setFormDisplay}
+              formValue={formValue}
+              setAddress={setAddress}
+              setDisplayAddressTab={setDisplayAddressTab}
+            />
+          ) : (
+            <div className="address-button-container">
+              {token && (
+                <div className="address-main-container">
+                  {address.map(
+                    ({
+                      _id,
+                      name,
+                      street,
+                      zipCode,
+                      state,
+                      city,
+                      country,
+                      mobile,
+                    }) => (
+                      <div key={_id} className="address-container">
+                        <p className="add-user-name">{name}</p>
+                        <p>{street}</p>
+                        <p>
+                          {zipCode} {city} {state}
+                        </p>
+                        <p>{country}</p>
+                        <p>Mobile : {mobile}</p>
+                        <div className="address-button">
+                          <div className="edit-button">
+                            <p>Edit</p>
+                          </div>
+                          <div
+                            className="delete-button"
+                            onClick={() => deleteAddress(_id)}
+                          >
+                            Delete
+                          </div>
                         </div>
-                        <div className="delete-button">Delete</div>
                       </div>
-                    </div>
-                  )
-                )}
+                    )
+                  )}
+                </div>
+              )}
+              <div
+                className="add-address-button"
+                onClick={() => setDisplayAddressTab(true)}
+              >
+                <p>add address</p>
               </div>
-            )}
-            <div className="add-address-button">
-              <p>add address</p>
             </div>
-          </div>
-          <AddressTab
-            token={token}
-            addressForm={addressForm}
-            setAddressForm={setAddressForm}
-            formDisplay={formDisplay}
-            setFormDisplay={setFormDisplay}
-            formValue={formValue}
-            setAddress={setAddress}
-          />
+          )}
         </div>
       )}
     </>

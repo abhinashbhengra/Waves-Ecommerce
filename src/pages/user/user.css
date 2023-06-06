@@ -14,7 +14,9 @@
 }
 
 .user-main-container {
+  /* border: 1px solid red; */
   height: 85vh;
+  width: 100vw;
   background-color: #f9f9f9;
   display: flex;
   justify-content: center;
@@ -59,7 +61,10 @@
 
 .address-main-container {
   /* border: 1px solid red; */
+  padding: 0.5rem;
   display: flex;
+  /* justify-content: center; */
+  flex-wrap: wrap;
   gap: 6px;
 
   font-family: "Roboto", sans-serif;

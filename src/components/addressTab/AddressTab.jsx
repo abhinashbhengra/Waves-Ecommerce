@@ -7,6 +7,7 @@ export const AddressTab = ({
   formDisplay,
   setFormDisplay,
   formValue,
+  setDisplayAddressTab,
   token,
 }) => {
   const fillFormValue = (event, fieldName) => {
@@ -16,6 +17,7 @@ export const AddressTab = ({
 
   const saveHandler = async (e) => {
     e.preventDefault();
+    setDisplayAddressTab(false);
     const postAddress = async () => {
       try {
         console.log(token);
@@ -28,8 +30,6 @@ export const AddressTab = ({
         });
         const data = await response.json();
         setAddress(data.address);
-
-        console.log("server address", data);
       } catch (e) {
         console.log(e);
       }
@@ -37,7 +37,7 @@ export const AddressTab = ({
     postAddress();
   };
 
-  const fillFormValueWithDummy = (e) => {
+  const dummyAddressHandler = (e) => {
     e.preventDefault();
     setAddressForm((form) => ({
       ...form,
@@ -128,8 +128,8 @@ export const AddressTab = ({
           <input
             type="submit"
             className="btn default address-cancel"
-            onClick={(e) => fillFormValueWithDummy(e)}
-            value="Fill with Dummy Values"
+            onClick={(e) => dummyAddressHandler(e)}
+            value="Dummy Address"
           />
         </div>
       </form>
