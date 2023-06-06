@@ -1,50 +1,23 @@
 export const RatingFilter = ({ rating, filterDispatch }) => {
   const handleRating = (e) => {
     const value = e.target.value;
-    filterDispatch({ type: "SET_RATING", payload: +value });
+    filterDispatch({ type: "SET_RATING", payload: value });
   };
+  console.log(rating);
   return (
     <>
       <div className="rating-main-container">
         <p className="filter-heading">Rating</p>
-        <div className="rating">
-          <div>
-            <label className="rating-label">
-              <input
-                type="radio"
-                name="rating"
-                value={4.5}
-                checked={rating === 4.5}
-                onChange={handleRating}
-              />
-              <p className="rating-detail">4.5 stars & above</p>
-            </label>
-          </div>
-          <div>
-            <label className="rating-label">
-              <input
-                type="radio"
-                name="rating"
-                value={4}
-                checked={rating === 4}
-                onChange={handleRating}
-              />
-              <p className="rating-detail">4 stars & above</p>
-            </label>
-          </div>
-          <div>
-            <label className="rating-label">
-              <input
-                type="radio"
-                name="rating"
-                value={3}
-                checked={rating === 3}
-                onChange={handleRating}
-              />
-              <p className="rating-detail">3 stars & above</p>
-            </label>
-          </div>
-        </div>
+        <p>{rating} & above</p>
+        <input
+          type="range"
+          min={2.5}
+          max={4.5}
+          step={0.5}
+          value={rating}
+          onChange={handleRating}
+          // className="price-input"
+        />
       </div>
     </>
   );

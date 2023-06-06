@@ -1,7 +1,7 @@
 export const initialFilters = {
   price: 50000,
   categories: [],
-  rating: null,
+  rating: 2.5,
   sortBy: null,
   best_seller: false,
   new_launch: false,

@@ -11,7 +11,7 @@ export const products = [
     title: "Audio-technica - ath - m50x",
     description: "Closed-Back Studio Headphone",
     price: 11999,
-    rating: 4.5,
+    rating: 5,
     image:
       "https://ik.imagekit.io/u6itcrvxy/heaphone_collection/audio_technica/AudioTechnica00.png?updatedAt=1682678158403",
     categoryName: "headphone",
@@ -69,7 +69,7 @@ export const products = [
     title: "Heading",
     description: "description",
     price: 56000,
-    rating: 4.5,
+    rating: 5,
     image:
       "https://ik.imagekit.io/u6itcrvxy/heaphone_collection/audio_technica/AudioTechnica00.png?updatedAt=1682678158403",
     categoryName: "wireless",
