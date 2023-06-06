@@ -14,6 +14,14 @@ export const Login = () => {
 
   const navigate = useNavigate();
 
+  const handleGuestCredentials = () => {
+    setUser((curr) => ({
+      ...curr,
+      email: "adarshbalika@gmail.com",
+      password: "adarshbalika",
+    }));
+  };
+
   const handleLoginClick = (e) => {
     e.preventDefault();
     handleLogin(user);
@@ -55,7 +63,9 @@ export const Login = () => {
               Sign up
             </p>
 
-            <p className="add-guest-button">Add Guest Credentials</p>
+            <p className="add-guest-button" onClick={handleGuestCredentials}>
+              Add Guest Credentials
+            </p>
           </form>
         </div>
       </div>
