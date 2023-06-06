@@ -8,7 +8,16 @@ export const RatingFilter = ({ rating, filterDispatch }) => {
     <>
       <div className="rating-main-container">
         <p className="filter-heading">Rating</p>
-        <p>{rating} & above</p>
+        <p className="rating-range">
+          {rating}{" "}
+          <span>
+            <img
+              src="https://ik.imagekit.io/u6itcrvxy/Nav_Icon/star-c.png?updatedAt=1684993521625"
+              alt="star"
+            />
+          </span>{" "}
+          & above
+        </p>
         <input
           type="range"
           min={2.5}
@@ -16,7 +25,6 @@ export const RatingFilter = ({ rating, filterDispatch }) => {
           step={0.5}
           value={rating}
           onChange={handleRating}
-          // className="price-input"
         />
       </div>
     </>

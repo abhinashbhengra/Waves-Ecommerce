@@ -84,6 +84,12 @@
   letter-spacing: 1px;
   text-transform: capitalize;
 }
+.rating-range {
+  justify-content: space-between;
+  font-family: "Roboto", sans-serif;
+  font-size: 13px;
+  margin-top: 4px;
+}
 
 .sort-main-container {
   margin-bottom: 6px;
