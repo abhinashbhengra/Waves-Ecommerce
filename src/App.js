@@ -13,6 +13,7 @@ import { RequiresAuth } from "./components/RequiresAuth";
 import { SignUp } from "./pages/signup/SignUp";
 import Mockman from "mockman-js";
 import { ProductDetails } from "./components/prod-details-card/ProductDetails";
+import { Checkout } from "./pages/checkout/Chekout";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="/cart" element={<Cart />} />
           <Route path="/wishlist" element={<WishList />} />
           <Route path="/profile" element={<User />} />
+          <Route path="/checkout" element={<Checkout />} />
         </Route>
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
