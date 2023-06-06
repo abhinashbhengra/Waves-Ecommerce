@@ -145,3 +145,9 @@
   border: 1.4px solid #3b08ff;
   transform: scale(1.01);
 }
+.singleProduct-loader-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

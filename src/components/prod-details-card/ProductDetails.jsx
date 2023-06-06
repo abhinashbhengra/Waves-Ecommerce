@@ -1,5 +1,7 @@
 import "../prod-details-card/productDetails.css";
 
+import { LineWave } from "react-loader-spinner";
+
 import { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { WishlistContext } from "../../context/WishlistContext";
@@ -11,6 +13,7 @@ export const ProductDetails = () => {
   const { wishlistItems, removeFromWishlist, addToWishlist } =
     useContext(WishlistContext);
   const { cartItems, addToCart } = useContext(CartContext);
+  const [loading, setLoading] = useState(false);
 
   const { productId } = useParams();
 
@@ -18,10 +21,12 @@ export const ProductDetails = () => {
 
   useEffect(() => {
     const fetchProduct = async () => {
+      setLoading(true);
       try {
         const response = await fetch(`/api/products/${productId}`);
         const data = await response.json();
         setProduct(data.product);
+        setLoading(false);
       } catch (e) {
         console.log(e);
       }
@@ -33,7 +38,22 @@ export const ProductDetails = () => {
   return (
     <>
       <Navbar />
-      {product && product.image && (
+      {loading ? (
+        <div className="singleProduct-loader-container">
+          <LineWave
+            height="100"
+            width="100"
+            color="#3b08fe"
+            ariaLabel="line-wave"
+            wrapperStyle={{}}
+            wrapperClass=""
+            visible={true}
+            firstLineColor=""
+            middleLineColor=""
+            lastLineColor=""
+          />
+        </div>
+      ) : (
         <div className="productDetails-main-container">
           <div className="productDetails-container">
             <div className="productDetails-image">
