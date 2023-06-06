@@ -44,6 +44,11 @@ export const User = () => {
     }
   };
 
+  const addAdress = () => {
+    setDisplayAddressTab(true);
+    setAddressForm(formValue);
+  };
+
   useEffect(() => {
     const fetchaddress = async () => {
       try {
@@ -150,10 +155,7 @@ export const User = () => {
                   )}
                 </div>
               )}
-              <div
-                className="add-address-button"
-                onClick={() => setDisplayAddressTab(true)}
-              >
+              <div className="add-address-button" onClick={addAdress}>
                 <p>add address</p>
               </div>
             </div>

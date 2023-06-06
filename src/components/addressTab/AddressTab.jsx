@@ -37,6 +37,12 @@ export const AddressTab = ({
     postAddress();
   };
 
+  const cancleHandler = (e) => {
+    e.preventDefault();
+    setDisplayAddressTab(false);
+    setAddressForm(formValue);
+  };
+
   const dummyAddressHandler = (e) => {
     e.preventDefault();
     setAddressForm((form) => ({
@@ -54,7 +60,16 @@ export const AddressTab = ({
   return (
     <>
       <form className="address-form" onSubmit={(e) => saveHandler(e)}>
-        <h4>ADD NEW ADDRESS</h4>
+        <div className="cancel-logo">
+          <img
+            onClick={cancleHandler}
+            src="https://ik.imagekit.io/u6itcrvxy/Nav_Icon/cancel-svgrepo-com.svg?updatedAt=1686041373442"
+            alt="cancel_logo"
+          />
+        </div>
+        <h4 className="add-address-heading">
+          <p>Add address</p>
+        </h4>
         <div className="form-input">
           <input
             placeholder="Enter Name"
@@ -115,23 +130,14 @@ export const AddressTab = ({
         </div>
         <div className="address-form-btn">
           <input
-            className="btn link-btn address-save"
+            className="saveAdd-button"
             type="submit"
-            value="Save"
-          />
-          <input
-            type="reset"
-            className="btn danger address-cancel"
-            // onClick={(e) => cancelForm(e)}
-            value="Cancel"
-          />
-          <input
-            type="submit"
-            className="btn default address-cancel"
-            onClick={(e) => dummyAddressHandler(e)}
-            value="Dummy Address"
+            value="Save address"
           />
         </div>
+        <p className="address-dummy" onClick={(e) => dummyAddressHandler(e)}>
+          Dummy Address
+        </p>
       </form>
     </>
   );

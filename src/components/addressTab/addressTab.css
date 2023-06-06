@@ -1,20 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Sora:wght@700&display=swap");
+
 .address-form {
   border: 1px solid #e3e3e3;
   border-radius: 5px;
-  width: 600px;
+  width: 550px;
   height: fit-content;
   padding: 1rem 3rem;
+  position: relative;
+}
+.cancel-logo {
+  position: absolute;
+  right: 13px;
+}
+.cancel-logo > img {
+  width: 20px;
+  cursor: pointer;
 }
 
+.add-address-heading > p {
+  font-family: "Sora", sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.24px;
+}
 .form-input {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  margin-bottom: 2rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .form-input > input {
   padding: 16px 20px;
   border: 1px solid #e3e3e3;
   border-radius: 8px;
+
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+}
+
+.address-form-btn {
+  display: flex;
+  flex-direction: column;
+}
+
+.saveAdd-button {
+  height: 50px;
+  padding: 14px 40px;
+  border-style: none;
+  border-radius: 60px;
+  background-color: #3b08fe;
+  cursor: pointer;
+  transition: transform 0.2s;
+
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  line-height: 22.4px;
+  text-transform: uppercase;
+  text-align: center;
+  color: #ffffff;
+}
+.saveAdd-button > input {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  line-height: 22.4px;
+  text-transform: uppercase;
+  text-align: center;
+  color: #ffffff;
+}
+
+.saveAdd-button:hover {
+  transform: scale(0.98);
+  background-color: #555555;
+}
+
+.address-dummy {
+  text-align: center;
+  color: #444444;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 12px;
+}
+.address-dummy:hover {
+  color: #3b08ff;
+  text-decoration: underline;
 }
