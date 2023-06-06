@@ -67,7 +67,10 @@ export const Cart = () => {
                   <p className="checkout-total-price">₹ {total}</p>
                 </div>
               </div>
-              <button className="checkout-button">
+              <button
+                className="checkout-button"
+                onClick={() => navigate("/checkout")}
+              >
                 <p>proceed to checkout</p>
               </button>
             </div>

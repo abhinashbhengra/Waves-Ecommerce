@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Sora:wght@700&display=swap");
+
+.checkout-container {
+  height: 100vh;
+  padding-top: 7rem;
+  /* border: 1px solid red; */
+}
+.checkout-details {
+  display: flex;
+  justify-content: space-around;
+  /* align-items: center; */
+  padding: 0 6rem;
+  /* border: 1px solid red; */
+}
+
+.checkout-address-container {
+  border: 1px solid #e3e3e3;
+  border-radius: 10px;
+
+  padding: 1rem 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.address-checkbox-container {
+  display: flex;
+  gap: 6px;
+}
+
+.checkout {
+  border: 1px solid #e3e3e3;
+  width: 400px;
+  /* height: 300px; */
+  padding: 40px 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.p-flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.price-details-heading {
+  font-family: "Sora", sans-serif;
+  font-size: 18px;
+  line-height: 22.4px;
+  color: #444444;
+}
+
+.checkout-subtotal-heading {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  line-height: 22.4px;
+  color: #7a7a7a;
+}
+.checkout-subtotal-price {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  line-height: 22.4px;
+  color: #7a7a7a;
+}
+.checkout-discount-heading {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  line-height: 22.4px;
+  color: #7a7a7a;
+}
+.checkout-discount-price {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  line-height: 22.4px;
+  color: #7a7a7a;
+}
+.checkout-total-heading {
+  font-family: "Sora", sans-serif;
+  font-size: 24px;
+  letter-spacing: -0.24px;
+  line-height: 33.6px;
+  color: #444444;
+}
+.checkout-total-price {
+  font-family: "Sora", sans-serif;
+  font-size: 24px;
+  letter-spacing: -0.24px;
+  line-height: 33.6px;
+  color: #444444;
+}
+.checkout-button {
+  height: 56px;
+  padding: 17px 40px;
+  border-style: none;
+  border-radius: 60px;
+  background-color: #3b08fe;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.checkout-button p {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  line-height: 22.4px;
+  text-transform: uppercase;
+  text-align: center;
+  color: #ffffff;
+}
+
+.checkout-button:hover {
+  transform: scale(0.98);
+  background-color: #555555;
+}
+
+.empty-carty-description {
+  /* border: 1px solid red; */
+  height: 75vh;
+  width: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.break {
+  height: 2px;
+}

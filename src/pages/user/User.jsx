@@ -5,6 +5,7 @@ import { Navbar } from "../../components/navbar/Navbar";
 import { AuthContext } from "../../context/AuthContext";
 
 import { AddressTab } from "../../components/addressTab/AddressTab";
+import { useNavigate } from "react-router-dom";
 
 export const User = () => {
   const { authState, handleLogout } = useContext(AuthContext);

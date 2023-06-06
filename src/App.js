@@ -13,7 +13,7 @@ import { RequiresAuth } from "./components/RequiresAuth";
 import { SignUp } from "./pages/signup/SignUp";
 import Mockman from "mockman-js";
 import { ProductDetails } from "./components/prod-details-card/ProductDetails";
-import { Checkout } from "./pages/checkout/Chekout";
+import { Checkout } from "./pages/checkout/Checkout";
 
 function App() {
   return (
