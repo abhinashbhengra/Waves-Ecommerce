@@ -8,6 +8,10 @@ import { WishlistContext } from "../../context/WishlistContext";
 import { CartContext } from "../../context/CartContext";
 import { Navbar } from "../navbar/Navbar";
 
+import { ToastContainer, toast } from "react-toastify";
+
+import "react-toastify/dist/ReactToastify.css";
+
 export const ProductDetails = () => {
   const [product, setProduct] = useState({});
   const { wishlistItems, removeFromWishlist, addToWishlist } =
@@ -18,6 +22,47 @@ export const ProductDetails = () => {
   const { productId } = useParams();
 
   const navigate = useNavigate();
+
+  const handleAddToCart = (product) => {
+    addToCart(product);
+    toast.success("Added To Cart", {
+      position: "bottom-right",
+      autoClose: 1500,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
+  };
+
+  const handleAddToWishlist = (product) => {
+    addToWishlist(product);
+    toast.success("Added To Wislist", {
+      position: "bottom-right",
+      autoClose: 1500,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
+  };
+  const handleRemoveFromWishlist = (productId) => {
+    addToWishlist(productId);
+    toast.error("Removed From Wishlist", {
+      position: "bottom-right",
+      autoClose: 1500,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
+  };
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -95,7 +140,7 @@ export const ProductDetails = () => {
                   </button>
                 ) : (
                   <button
-                    onClick={() => addToCart(product)}
+                    onClick={() => handleAddToCart(product)}
                     className="prod-cart-button"
                   >
                     Add to Cart
@@ -105,14 +150,14 @@ export const ProductDetails = () => {
               <div>
                 {wishlistItems.find(({ _id }) => _id === product._id) ? (
                   <button
-                    onClick={() => removeFromWishlist(product._id)}
+                    onClick={() => handleRemoveFromWishlist(product._id)}
                     className="prod-wishlist-button"
                   >
                     <p>Remove from wishlist</p>
                   </button>
                 ) : (
                   <button
-                    onClick={() => addToWishlist(product)}
+                    onClick={() => handleAddToWishlist(product)}
                     className="prod-wishlist-button"
                   >
                     Add to Wishlist
@@ -123,6 +168,7 @@ export const ProductDetails = () => {
           </div>
         </div>
       )}
+      <ToastContainer />
     </>
   );
 };

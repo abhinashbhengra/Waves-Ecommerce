@@ -4,12 +4,58 @@ import { WishlistContext } from "../../context/WishlistContext";
 import { CartContext } from "../../context/CartContext";
 import { useNavigate } from "react-router-dom";
 
+import { ToastContainer, toast } from "react-toastify";
+
+import "react-toastify/dist/ReactToastify.css";
+
 export const ProductCard = ({ product }) => {
   const { wishlistItems, addToWishlist, removeFromWishlist } =
     useContext(WishlistContext);
   const { cartItems, addToCart } = useContext(CartContext);
 
   const navigate = useNavigate();
+
+  const handleAddToCart = (product) => {
+    addToCart(product);
+    toast.success("Added To Cart", {
+      position: "bottom-right",
+      autoClose: 1500,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
+  };
+
+  const handleAddToWishlist = (product) => {
+    addToWishlist(product);
+    toast.success("Added To Wishlist", {
+      position: "bottom-right",
+      autoClose: 1500,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
+  };
+
+  const handleRemoveFromWishlist = (productId) => {
+    removeFromWishlist(productId);
+    toast.error("Removed From Wishlist", {
+      position: "bottom-right",
+      autoClose: 1500,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
+  };
 
   const showProductDetails = () => {
     console.log("product details");
@@ -20,11 +66,11 @@ export const ProductCard = ({ product }) => {
     <div className="productCard-container">
       <div className="productCard-wishlist">
         {wishlistItems.find(({ _id }) => _id === product._id) ? (
-          <div onClick={() => removeFromWishlist(product._id)}>
+          <div onClick={() => handleRemoveFromWishlist(product._id)}>
             <img src="./images/filledheart.svg" alt="add_to_whislist" />
           </div>
         ) : (
-          <div onClick={() => addToWishlist(product)}>
+          <div onClick={() => handleAddToWishlist(product)}>
             <img src="./images/heart.svg" alt="add_to_whislist" />
           </div>
         )}
@@ -54,11 +100,15 @@ export const ProductCard = ({ product }) => {
             Go to Cart
           </button>
         ) : (
-          <button onClick={() => addToCart(product)} className="cart-button">
+          <button
+            onClick={() => handleAddToCart(product)}
+            className="cart-button"
+          >
             Add to Cart
           </button>
         )}
       </div>
+      <ToastContainer />
     </div>
   );
 };

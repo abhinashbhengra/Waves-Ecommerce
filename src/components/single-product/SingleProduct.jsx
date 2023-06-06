@@ -3,10 +3,42 @@ import "../single-product/singleProduct.css";
 import { CartContext } from "../../context/CartContext";
 import { WishlistContext } from "../../context/WishlistContext";
 
+import { ToastContainer, toast } from "react-toastify";
+
+import "react-toastify/dist/ReactToastify.css";
+
 export const SingleProduct = ({ product }) => {
   const { deleteFromCart, changeItemQuantity } = useContext(CartContext);
   const { wishlistItems, addToWishlist, removeFromWishlist } =
     useContext(WishlistContext);
+
+  const handleMovedToWishlist = (product) => {
+    addToWishlist(product);
+    toast.success("Moved To Wishlist", {
+      position: "bottom-right",
+      autoClose: 1500,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
+  };
+
+  const handleRemoveFromWishlist = (productId) => {
+    removeFromWishlist(productId);
+    toast.error("Removed From Wishlist", {
+      position: "bottom-right",
+      autoClose: 1500,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
+  };
 
   return (
     <div className="single-product">
@@ -57,16 +89,17 @@ export const SingleProduct = ({ product }) => {
 
         <div className="singlecard-wishlist">
           {wishlistItems.find(({ _id }) => _id === product._id) ? (
-            <div onClick={() => removeFromWishlist(product._id)}>
+            <div onClick={() => handleRemoveFromWishlist(product._id)}>
               <img src="./images/filledheart.svg" alt="add_to_whislist" />
             </div>
           ) : (
-            <div onClick={() => addToWishlist(product)}>
+            <div onClick={() => handleMovedToWishlist(product)}>
               <img src="./images/heart.svg" alt="add_to_whislist" />
             </div>
           )}
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };
