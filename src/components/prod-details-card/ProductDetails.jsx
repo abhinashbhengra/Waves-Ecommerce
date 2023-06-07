@@ -13,7 +13,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 export const ProductDetails = () => {
-  const [product, setProduct] = useState();
+  const [product, setProduct] = useState({});
   const { wishlistItems, removeFromWishlist, addToWishlist } =
     useContext(WishlistContext);
   const { cartItems, addToCart } = useContext(CartContext);
