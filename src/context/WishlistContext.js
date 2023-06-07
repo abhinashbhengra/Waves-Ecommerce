@@ -5,6 +5,10 @@ import { addItems } from "../utils/wishlist/addItems";
 import { useNavigate } from "react-router-dom";
 import { delteItem } from "../utils/wishlist/deleteItem";
 
+import { ToastContainer, toast } from "react-toastify";
+
+import "react-toastify/dist/ReactToastify.css";
+
 export const WishlistContext = createContext({
   wishlistState: {},
   wishlistDispatch: () => {},
@@ -21,6 +25,16 @@ export const WishlistProvider = ({ children }) => {
     if (token) {
       const updatedItems = await addItems(product, token);
       setWishListItems(updatedItems);
+      toast.success("Added To Wishlist", {
+        position: "bottom-right",
+        autoClose: 1500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
     } else {
       navigate("/login");
     }
@@ -30,6 +44,16 @@ export const WishlistProvider = ({ children }) => {
     if (token) {
       const updatedItems = await delteItem(selectId, token);
       setWishListItems(updatedItems);
+      toast.error("Removed From Wishlist", {
+        position: "bottom-right",
+        autoClose: 1500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
     } else {
       console.log("something went wrong");
     }

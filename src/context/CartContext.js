@@ -6,6 +6,10 @@ import { getItems } from "../utils/cart/getItems";
 import { deleteItem } from "../utils/cart/deleteItem";
 import { changeQuantity } from "../utils/cart/changeQuantity";
 
+import { ToastContainer, toast } from "react-toastify";
+
+import "react-toastify/dist/ReactToastify.css";
+
 export const CartContext = createContext({
   cartState: {},
   cartDispatch: () => {},
@@ -23,6 +27,16 @@ export const CartProvider = ({ children }) => {
     if (token) {
       const addedItems = await addItems(product, token);
       setCartItems(addedItems);
+      toast.success("Added To Cart", {
+        position: "bottom-right",
+        autoClose: 1500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
     } else {
       navigate("/login");
     }

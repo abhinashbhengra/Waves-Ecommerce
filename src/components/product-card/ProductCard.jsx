@@ -15,34 +15,6 @@ export const ProductCard = ({ product }) => {
 
   const navigate = useNavigate();
 
-  const handleAddToCart = (product) => {
-    addToCart(product);
-    toast.success("Added To Cart", {
-      position: "bottom-right",
-      autoClose: 1500,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "dark",
-    });
-  };
-
-  const handleAddToWishlist = (product) => {
-    addToWishlist(product);
-    toast.success("Added To Wishlist", {
-      position: "bottom-right",
-      autoClose: 1500,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "dark",
-    });
-  };
-
   const handleRemoveFromWishlist = (productId) => {
     removeFromWishlist(productId);
     toast.error("Removed From Wishlist", {
@@ -66,11 +38,11 @@ export const ProductCard = ({ product }) => {
     <div className="productCard-container">
       <div className="productCard-wishlist">
         {wishlistItems.find(({ _id }) => _id === product._id) ? (
-          <div onClick={() => handleRemoveFromWishlist(product._id)}>
+          <div onClick={() => removeFromWishlist(product._id)}>
             <img src="./images/filledheart.svg" alt="add_to_whislist" />
           </div>
         ) : (
-          <div onClick={() => handleAddToWishlist(product)}>
+          <div onClick={() => addToWishlist(product)}>
             <img src="./images/heart.svg" alt="add_to_whislist" />
           </div>
         )}
@@ -109,10 +81,7 @@ export const ProductCard = ({ product }) => {
             Go to Cart
           </button>
         ) : (
-          <button
-            onClick={() => handleAddToCart(product)}
-            className="cart-button"
-          >
+          <button onClick={() => addToCart(product)} className="cart-button">
             Add to Cart
           </button>
         )}
