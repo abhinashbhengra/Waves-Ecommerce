@@ -7,6 +7,7 @@ import { FilterContext } from "../../context/FilterContext";
 import { productDB } from "../../data/dummyDB";
 import { CartContext } from "../../context/CartContext";
 import { AuthContext } from "../../context/AuthContext";
+import { WishlistContext } from "../../context/WishlistContext";
 
 export const Navbar = () => {
   const { filterDispatch } = useContext(FilterContext);
@@ -14,6 +15,7 @@ export const Navbar = () => {
   const [products, setProducts] = useState([]);
   const [searchProduct, setSearchProduct] = useState();
   const { cartItems } = useContext(CartContext);
+  const { wishlistItems } = useContext(WishlistContext);
   const { authState } = useContext(AuthContext);
   const { token } = authState;
 
@@ -115,20 +117,25 @@ export const Navbar = () => {
                   className="products-logo"
                 />
               </Link>
-              <Link to="/cart">
+              <Link to="/cart" className="cart-logo-quantity">
                 <img
                   className="cart-logo"
                   src="https://ik.imagekit.io/u6itcrvxy/Nav_Icon/cart-shopping-shop-svgrepo-com.svg?updatedAt=1684518260440"
                   alt="cart"
                 />
-                {/* {token ? <p>{cartItems.length}</p> : <p>0</p>} */}
+                <div className="cart-quantity">
+                  <p>{cartItems.length}</p>
+                </div>
               </Link>
-              <Link to="/wishlist">
+              <Link to="/wishlist" className="wishlist-logo-quantity">
                 <img
                   src="https://ik.imagekit.io/u6itcrvxy/Nav_Icon/wii.svg?updatedAt=1684519353432"
                   alt="wishlist-logo"
                   className="wishlist-logo"
                 />
+                <div className="wishlist-quantity">
+                  <p>{wishlistItems.length}</p>
+                </div>
               </Link>
               <Link to="/profile">
                 <img

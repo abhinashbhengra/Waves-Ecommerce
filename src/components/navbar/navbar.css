@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Sora:wght@700&display=swap");
 .nav-main-container {
   position: fixed;
   top: 0;
@@ -82,4 +83,58 @@
 .image-title-search {
   display: flex;
   align-items: center;
+}
+
+.cart-logo-quantity {
+  position: relative;
+}
+.cart-quantity {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #3b08ff;
+  /* padding: 2px; */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+}
+
+.cart-quantity > p {
+  color: #ffffff;
+  font-family: "Roboto", sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 9px;
+}
+
+.wishlist-logo-quantity {
+  position: relative;
+}
+.wishlist-quantity {
+  position: absolute;
+  top: -4px;
+  right: 0;
+  background-color: #3b08ff;
+  /* padding: 2px; */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+}
+
+.wishlist-quantity > p {
+  color: #ffffff;
+  font-family: "Roboto", sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 9px;
 }

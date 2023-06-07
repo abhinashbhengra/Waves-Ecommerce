@@ -3,7 +3,7 @@ export const RatingFilter = ({ rating, filterDispatch }) => {
     const value = e.target.value;
     filterDispatch({ type: "SET_RATING", payload: value });
   };
-  console.log(rating);
+
   return (
     <>
       <div className="rating-main-container">
