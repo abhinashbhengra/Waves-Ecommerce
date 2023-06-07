@@ -23,47 +23,6 @@ export const ProductDetails = () => {
 
   const navigate = useNavigate();
 
-  const handleAddToCart = (product) => {
-    addToCart(product);
-    toast.success("Added To Cart", {
-      position: "bottom-right",
-      autoClose: 1500,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "dark",
-    });
-  };
-
-  const handleAddToWishlist = (product) => {
-    addToWishlist(product);
-    toast.success("Added To Wislist", {
-      position: "bottom-right",
-      autoClose: 1500,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "dark",
-    });
-  };
-  const handleRemoveFromWishlist = (productId) => {
-    removeFromWishlist(productId);
-    toast.error("Removed From Wishlist", {
-      position: "bottom-right",
-      autoClose: 1500,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "dark",
-    });
-  };
-
   useEffect(() => {
     const fetchProduct = async () => {
       setLoading(true);
@@ -140,7 +99,7 @@ export const ProductDetails = () => {
                   </button>
                 ) : (
                   <button
-                    onClick={() => handleAddToCart(product)}
+                    onClick={() => addToCart(product)}
                     className="prod-cart-button"
                   >
                     Add to Cart
@@ -150,14 +109,14 @@ export const ProductDetails = () => {
               <div>
                 {wishlistItems.find(({ _id }) => _id === product._id) ? (
                   <button
-                    onClick={() => handleRemoveFromWishlist(product._id)}
+                    onClick={() => removeFromWishlist(product._id)}
                     className="prod-wishlist-button"
                   >
                     <p>Remove from wishlist</p>
                   </button>
                 ) : (
                   <button
-                    onClick={() => handleAddToWishlist(product)}
+                    onClick={() => addToWishlist(product)}
                     className="prod-wishlist-button"
                   >
                     Add to Wishlist

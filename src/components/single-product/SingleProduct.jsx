@@ -12,34 +12,6 @@ export const SingleProduct = ({ product }) => {
   const { wishlistItems, addToWishlist, removeFromWishlist } =
     useContext(WishlistContext);
 
-  const handleMovedToWishlist = (product) => {
-    addToWishlist(product);
-    toast.success("Moved To Wishlist", {
-      position: "bottom-right",
-      autoClose: 1500,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "dark",
-    });
-  };
-
-  const handleRemoveFromWishlist = (productId) => {
-    removeFromWishlist(productId);
-    toast.error("Removed From Wishlist", {
-      position: "bottom-right",
-      autoClose: 1500,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "dark",
-    });
-  };
-
   return (
     <div className="single-product">
       <div className="single-product-img-desc">
@@ -89,11 +61,11 @@ export const SingleProduct = ({ product }) => {
 
         <div className="singlecard-wishlist">
           {wishlistItems.find(({ _id }) => _id === product._id) ? (
-            <div onClick={() => handleRemoveFromWishlist(product._id)}>
+            <div onClick={() => removeFromWishlist(product._id)}>
               <img src="./images/filledheart.svg" alt="add_to_whislist" />
             </div>
           ) : (
-            <div onClick={() => handleMovedToWishlist(product)}>
+            <div onClick={() => addToWishlist(product)}>
               <img src="./images/heart.svg" alt="add_to_whislist" />
             </div>
           )}
