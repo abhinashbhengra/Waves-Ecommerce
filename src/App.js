@@ -15,6 +15,9 @@ import Mockman from "mockman-js";
 import { ProductDetails } from "./components/prod-details-card/ProductDetails";
 import { Checkout } from "./pages/checkout/Checkout";
 
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 function App() {
   return (
     <div className="App">
@@ -33,6 +36,7 @@ function App() {
         <Route path="*" element={<Error />} />
         <Route path="/mockman" element={<Mockman />} />
       </Routes>
+      <ToastContainer />
     </div>
   );
 }

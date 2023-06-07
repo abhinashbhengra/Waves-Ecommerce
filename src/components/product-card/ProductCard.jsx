@@ -117,7 +117,6 @@ export const ProductCard = ({ product }) => {
           </button>
         )}
       </div>
-      <ToastContainer />
     </div>
   );
 };

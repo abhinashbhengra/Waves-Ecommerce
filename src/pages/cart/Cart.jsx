@@ -47,7 +47,7 @@ export const Cart = () => {
             <div className="checkout">
               <p className="price-details-heading">Price Details</p>
               {cartItems.map((product) => (
-                <div className="p-flex">
+                <div className="p-flex" key={product._id}>
                   <div>
                     <p className="checkout-subtotal-heading">
                       {product.title} ({product.qty})
