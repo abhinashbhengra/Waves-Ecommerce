@@ -106,7 +106,7 @@ export const ProductDetails = () => {
             </div>
             <div className="productDetails-section">
               <div className="productDetails-brand">
-                <p>AUDIO-TECHNICA</p>
+                <p>{product?.brand}</p>
               </div>
               <div className="productDetails-heading">
                 <p>{product?.title}</p>

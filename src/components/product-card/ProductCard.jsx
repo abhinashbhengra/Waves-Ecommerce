@@ -87,11 +87,20 @@ export const ProductCard = ({ product }) => {
         </div>
         <div className="productCard-price">
           <p>
-            ₹ {product.price} <span className="prev-price">₹ 12399</span>
+            ₹ {product.price}{" "}
+            <span className="prev-price">₹ {product.prevPrice}</span>
           </p>
         </div>
         <div className="productCard-rating">
-          <p>{product.rating}</p>
+          <p>
+            {product.rating}{" "}
+            <span>
+              <img
+                src="https://ik.imagekit.io/u6itcrvxy/Nav_Icon/star-c.png?updatedAt=1684993521625"
+                alt="star"
+              />
+            </span>
+          </p>
         </div>
       </div>
       <div>

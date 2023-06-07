@@ -51,6 +51,7 @@
   letter-spacing: 3.136px;
   line-height: 22.4px;
   margin-top: 3rem;
+  text-transform: uppercase;
 }
 .productDetails-brand:hover {
   color: #444444;
