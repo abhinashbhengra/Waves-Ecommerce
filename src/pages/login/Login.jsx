@@ -17,8 +17,8 @@ export const Login = () => {
   const handleGuestCredentials = () => {
     setUser((curr) => ({
       ...curr,
-      email: "adarshbalika@gmail.com",
-      password: "adarshbalika",
+      email: "abhinashbhengra@gmail.com",
+      password: "abhinashbhengra@123",
     }));
   };
 

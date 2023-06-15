@@ -61,13 +61,13 @@ export const AddressTab = ({
     e.preventDefault();
     setAddressForm((form) => ({
       ...form,
-      name: "Admin",
-      street: "33 , MG Road",
-      city: "Pune",
-      state: "Maharashtra",
+      name: "Abhinash",
+      street: "1st Main Road",
+      city: "Ranchi",
+      state: "Jharkhand",
       country: "India",
-      zipCode: "411046",
-      mobile: "12345678",
+      zipCode: "834001",
+      mobile: "8746789056",
     }));
   };
   return (
