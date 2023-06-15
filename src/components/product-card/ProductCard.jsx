@@ -7,11 +7,15 @@ import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
+import { AuthContext } from "../../context/AuthContext";
 
 export const ProductCard = ({ product }) => {
   const { wishlistItems, addToWishlist, removeFromWishlist } =
     useContext(WishlistContext);
   const { cartItems, addToCart } = useContext(CartContext);
+  const { authState } = useContext(AuthContext);
+
+  const { token } = authState;
 
   const navigate = useNavigate();
 
@@ -37,7 +41,7 @@ export const ProductCard = ({ product }) => {
   return (
     <div className="productCard-container">
       <div className="productCard-wishlist">
-        {wishlistItems.find(({ _id }) => _id === product._id) ? (
+        {token && wishlistItems.find(({ _id }) => _id === product._id) ? (
           <div onClick={() => removeFromWishlist(product._id)}>
             <img src="./images/filledheart.svg" alt="add_to_whislist" />
           </div>
@@ -76,7 +80,7 @@ export const ProductCard = ({ product }) => {
         </div>
       </div>
       <div>
-        {cartItems.find(({ _id }) => _id === product._id) ? (
+        {token && cartItems.find(({ _id }) => _id === product._id) ? (
           <button onClick={() => navigate("/cart")} className="cart-button">
             Go to Cart
           </button>
