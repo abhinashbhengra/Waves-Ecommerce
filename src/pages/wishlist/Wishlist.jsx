@@ -22,17 +22,25 @@ export const WishList = () => {
     <div>
       <Navbar />
       <div className="wishlist-container">
+        <p className="wishlist-main-heading">Wishlist</p>
         <div>
           {wishlistItems.length < 1 ? (
-            <div>
-              <p>Oops !! No products</p>
-              <button onClick={handleExploreClick}>Explore</button>
+            <div className="empty-cart">
+              <p className="">Your wishlist is empty</p>
+              <button
+                onClick={handleExploreClick}
+                className="continue-shopping-button"
+              >
+                <p>Continue Shopping</p>
+              </button>
             </div>
           ) : (
             <div className="wishlist-products">
-              {wishlistItems.map((product) => (
-                <ProductCard product={product} key={product._id} />
-              ))}
+              <div className="wishlist-products">
+                {wishlistItems.map((product) => (
+                  <ProductCard product={product} key={product._id} />
+                ))}
+              </div>
             </div>
           )}
         </div>

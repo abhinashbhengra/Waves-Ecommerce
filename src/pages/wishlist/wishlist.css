@@ -1,12 +1,19 @@
 .wishlist-container {
-  height: 95vh;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+  height: 91vh;
+  margin-top: 4rem;
 }
 .wishlist-products {
+  padding: 6px 18px;
   display: flex;
   flex-wrap: wrap;
   gap: 3rem;
+}
+.wishlist-main-heading {
+  font-family: "Sora", sans-serif;
+  font-size: 46px;
+  font-weight: 700;
+  padding-top: 3rem;
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
 }
