@@ -43,3 +43,26 @@
   color: white;
   border: 1px solid white;
 }
+
+@media screen and (max-width: 1124px) {
+  .hero-cta {
+    top: 15.5rem;
+    left: 8rem;
+    gap: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 794px) {
+  .hero-cta {
+    top: 10.5rem;
+    left: 8rem;
+    gap: 1.5rem;
+  }
+  .hero-heading {
+    font-size: 40px;
+  }
+  .hero-description {
+    font-size: 12px;
+    line-height: 20.6px;
+  }
+}
