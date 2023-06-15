@@ -55,6 +55,7 @@
   font-weight: 700;
   letter-spacing: -0.32px;
   line-height: 41.6px;
+  text-transform: uppercase;
 
   /* background: linear-gradient(276deg, #ed71a3 0%, #42cfe7 100%); */
   background: linear-gradient(310deg, #6f66e8 0%, #42cfe7 100%);
