@@ -4,6 +4,8 @@ import { Navbar } from "../../components/navbar/Navbar";
 import { AuthContext } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 
+import { toast } from "react-toastify";
+
 export const SignUp = () => {
   const [user, setUser] = useState({
     firstName: "",
@@ -35,7 +37,23 @@ export const SignUp = () => {
 
   const handleSignupClick = (e) => {
     e.preventDefault();
-    handleSignup(user);
+    user.firstName !== "" &&
+    user.lastName !== "" &&
+    user.email !== "" &&
+    user.password !== "" &&
+    user.confirmPassword !== ""
+      ? handleSignup(user)
+      : toast.warning("Please fill your details", {
+          position: "bottom-right",
+          autoClose: 1500,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+        });
+    // handleSignup(user);
   };
 
   const showPasswordhandler = (type) => {

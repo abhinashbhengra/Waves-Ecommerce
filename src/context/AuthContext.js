@@ -3,6 +3,8 @@ import { authInitial, authReducer } from "../reducers/authReducer";
 import { login, signUp } from "../utils/authentication/authentication";
 import { useLocation, useNavigate } from "react-router-dom";
 
+import { toast } from "react-toastify";
+
 export const AuthContext = createContext({ user: "", token: "" });
 
 export const AuthProvider = ({ children }) => {
@@ -13,6 +15,17 @@ export const AuthProvider = ({ children }) => {
 
   const handleLogin = async (user) => {
     const response = await login(user);
+    response.encodedToken &&
+      toast.success("Successfully Logged In", {
+        position: "bottom-right",
+        autoClose: 1500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
     authDispatch({
       type: "LOGIN",
       payload: {
@@ -29,7 +42,17 @@ export const AuthProvider = ({ children }) => {
 
   const handleSignup = async (user) => {
     const response = await signUp(user);
-
+    response.encodedToken &&
+      toast.success("Successfully Logged In", {
+        position: "bottom-right",
+        autoClose: 1500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
     authDispatch({
       type: "SIGNUP",
       payload: {
@@ -40,8 +63,18 @@ export const AuthProvider = ({ children }) => {
     navigate("/");
   };
 
-  const handleLogout = () => {
+  const handleLogout = async () => {
     authDispatch({ type: "LOGOUT" });
+    toast.error("Logged Out", {
+      position: "bottom-right",
+      autoClose: 1500,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
   };
 
   return (
