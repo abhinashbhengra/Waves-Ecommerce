@@ -13,6 +13,11 @@ export const SignUp = () => {
     confirmPassword: "",
   });
 
+  const [showPassword, setShowPassword] = useState({
+    password: false,
+    confirmPassword: false,
+  });
+
   const { handleSignup } = useContext(AuthContext);
 
   const navigate = useNavigate();
@@ -31,6 +36,15 @@ export const SignUp = () => {
   const handleSignupClick = (e) => {
     e.preventDefault();
     handleSignup(user);
+  };
+
+  const showPasswordhandler = (type) => {
+    type === "pwd"
+      ? setShowPassword((curr) => ({ ...curr, password: !curr.password }))
+      : setShowPassword((curr) => ({
+          ...curr,
+          confirmPassword: !curr.confirmPassword,
+        }));
   };
 
   return (
@@ -67,27 +81,66 @@ export const SignUp = () => {
                 setUser((curr) => ({ ...curr, email: e.target.value }))
               }
             />
-            <input
-              type="password"
-              name="password"
-              placeholder="Password"
-              value={user.password}
-              onChange={(e) =>
-                setUser((curr) => ({ ...curr, password: e.target.value }))
-              }
-            />
-            <input
-              type="Password"
-              name="confirmPassword"
-              placeholder="Confirm Password"
-              value={user.confirmPassword}
-              onChange={(e) =>
-                setUser((curr) => ({
-                  ...curr,
-                  confirmPassword: e.target.value,
-                }))
-              }
-            />
+
+            <div className="password-input">
+              <input
+                type={showPassword.password ? "text" : "password"}
+                name="password"
+                placeholder="Password"
+                value={user.password}
+                onChange={(e) =>
+                  setUser((curr) => ({ ...curr, password: e.target.value }))
+                }
+              />
+
+              <div
+                className="show-hide-logo"
+                onClick={() => showPasswordhandler("pwd")}
+              >
+                {showPassword.password ? (
+                  <img
+                    src="https://ik.imagekit.io/u6itcrvxy/Nav_Icon/lock-close-minus-round-715-svgrepo-com.svg?updatedAt=1686846630432"
+                    alt="lock"
+                  />
+                ) : (
+                  <img
+                    src="https://ik.imagekit.io/u6itcrvxy/Nav_Icon/lock-circle-open-round-704-svgrepo-com.svg?updatedAt=1686846645881"
+                    alt="unlock"
+                  />
+                )}
+              </div>
+            </div>
+            <div className="password-input">
+              <input
+                type={showPassword.confirmPassword ? "text" : "password"}
+                name="confirmPassword"
+                placeholder="Confirm Password"
+                value={user.confirmPassword}
+                onChange={(e) =>
+                  setUser((curr) => ({
+                    ...curr,
+                    confirmPassword: e.target.value,
+                  }))
+                }
+              />
+
+              <div
+                className="show-hide-logo"
+                onClick={() => showPasswordhandler("confirmPwd")}
+              >
+                {showPassword.confirmPassword ? (
+                  <img
+                    src="https://ik.imagekit.io/u6itcrvxy/Nav_Icon/lock-close-minus-round-715-svgrepo-com.svg?updatedAt=1686846630432"
+                    alt="lock"
+                  />
+                ) : (
+                  <img
+                    src="https://ik.imagekit.io/u6itcrvxy/Nav_Icon/lock-circle-open-round-704-svgrepo-com.svg?updatedAt=1686846645881"
+                    alt="unlock"
+                  />
+                )}
+              </div>
+            </div>
             <button type="submit" className="signup-button">
               CREATE ACCOUNT
             </button>
