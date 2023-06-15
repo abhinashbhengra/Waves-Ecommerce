@@ -4,7 +4,6 @@ import "../navbar/navbar.css";
 import { Link, useNavigate } from "react-router-dom";
 import { FilterContext } from "../../context/FilterContext";
 
-import { productDB } from "../../data/dummyDB";
 import { CartContext } from "../../context/CartContext";
 import { AuthContext } from "../../context/AuthContext";
 import { WishlistContext } from "../../context/WishlistContext";
