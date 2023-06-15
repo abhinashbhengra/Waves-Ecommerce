@@ -20,6 +20,7 @@
   margin: 40px 120px;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 2rem;
   /* position: relative; */
 }
