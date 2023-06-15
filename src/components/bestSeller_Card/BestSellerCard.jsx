@@ -11,10 +11,14 @@ export const BestSellerCard = ({ product }) => {
 
   const navigate = useNavigate();
 
+  const showProdDetails = () => {
+    navigate(`/products/${product._id}`);
+  };
+
   return (
     <div className="sellerCard-container">
       <div className="productCard-image">
-        <img src={product?.image} />
+        <img src={product?.image} onClick={showProdDetails} />
       </div>
       <div>
         <div className="sellerCard-heading">
