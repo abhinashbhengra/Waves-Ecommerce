@@ -2,9 +2,10 @@
 .category-container {
   /* border: 1px solid red; */
   height: 10vh;
-  margin: 22px 0 56px 0;
+  margin: 22px 0 170px 0;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   align-items: center;
   gap: 4rem;
 }
