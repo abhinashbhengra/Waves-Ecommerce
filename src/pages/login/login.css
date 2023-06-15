@@ -76,3 +76,18 @@
 .add-guest-button:hover {
   color: #3b08ff;
 }
+
+.password-input {
+  position: relative;
+  display: flex;
+}
+.password-input input {
+  width: 100%;
+}
+.show-hide-logo img {
+  width: 18px;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  cursor: pointer;
+}

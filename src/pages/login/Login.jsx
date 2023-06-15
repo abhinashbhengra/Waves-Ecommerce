@@ -11,6 +11,7 @@ export const Login = () => {
     email: "",
     password: "",
   });
+  const [showPassword, setShowPassword] = useState(false);
 
   const navigate = useNavigate();
 
@@ -25,6 +26,10 @@ export const Login = () => {
   const handleLoginClick = (e) => {
     e.preventDefault();
     handleLogin(user);
+  };
+
+  const showPasswordhandler = () => {
+    setShowPassword((curr) => !curr);
   };
 
   return (
@@ -43,15 +48,32 @@ export const Login = () => {
                 setUser((curr) => ({ ...curr, email: e.target.value }))
               }
             />
-            <input
-              type="password"
-              name="password"
-              placeholder="Password"
-              value={user.password}
-              onChange={(e) =>
-                setUser((curr) => ({ ...curr, password: e.target.value }))
-              }
-            />
+            <div className="password-input">
+              <input
+                type={showPassword ? "text" : "password"}
+                name="password"
+                placeholder="Password"
+                value={user.password}
+                onChange={(e) =>
+                  setUser((curr) => ({ ...curr, password: e.target.value }))
+                }
+              />
+
+              <div className="show-hide-logo" onClick={showPasswordhandler}>
+                {showPassword ? (
+                  <img
+                    src="https://ik.imagekit.io/u6itcrvxy/Nav_Icon/lock-close-minus-round-715-svgrepo-com.svg?updatedAt=1686846630432"
+                    alt="lock"
+                  />
+                ) : (
+                  <img
+                    src="https://ik.imagekit.io/u6itcrvxy/Nav_Icon/lock-circle-open-round-704-svgrepo-com.svg?updatedAt=1686846645881"
+                    alt="unlock"
+                  />
+                )}
+              </div>
+            </div>
+
             <button type="submit" className="login-button">
               LOGIN
             </button>
