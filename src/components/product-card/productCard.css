@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Sora:wght@700&display=swap");
 .productCard-container {
   font-family: "Roboto", sans-serif;
-  /* border: 1px solid green; */
+  height: fit-content;
   background-color: #ffffff;
   padding: 12px;
   width: 300px;
