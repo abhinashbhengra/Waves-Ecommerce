@@ -6,12 +6,14 @@ import { CartContext } from "../../context/CartContext";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 
+import { toast } from "react-toastify";
+
 export const Checkout = () => {
   const { cartItems, getCartItems } = useContext(CartContext);
   const { authState } = useContext(AuthContext);
   const { token } = authState;
   const [address, setAddress] = useState([]);
-  const [checkoutAddress, setCheckoutAddress] = useState({});
+  const [checkoutAddress, setCheckoutAddress] = useState();
   const [displayOrderSummary, setDisplayOrderSummary] = useState(false);
   const navigate = useNavigate();
 
@@ -22,7 +24,18 @@ export const Checkout = () => {
   const discount = 100;
 
   const confirmOrderHandler = () => {
-    setDisplayOrderSummary(true);
+    checkoutAddress
+      ? setDisplayOrderSummary(true)
+      : toast.warning("Please select address", {
+          position: "bottom-right",
+          autoClose: 1500,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+        });
   };
 
   const cancleHandler = () => {
