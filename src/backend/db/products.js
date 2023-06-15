@@ -403,7 +403,7 @@ export const products = [
   {
     _id: uuid(),
     brand: "Sennheiser",
-    title: "Sennheiser - momentum true wireless 3",
+    title: "Sennheiser - momentum",
     description: " Noise Cancelling True Wireless Earbuds",
     price: 19890,
     prevPrice: 21899,
@@ -417,7 +417,7 @@ export const products = [
   {
     _id: uuid(),
     brand: "Sennheiser",
-    title: "Sennheiser - cx plus true wireless",
+    title: "Sennheiser - cx plus",
     description: " True Wireless Earbuds",
     price: 12890,
     prevPrice: 14999,
@@ -431,7 +431,7 @@ export const products = [
   {
     _id: uuid(),
     brand: "Shure",
-    title: "shure - aonic 215 true wireless gen 2",
+    title: "shure - aonic 215 gen 2",
     description: " True Wireless Earbuds",
     price: 19999,
     prevPrice: 24999,
@@ -502,7 +502,7 @@ export const products = [
   {
     _id: uuid(),
     brand: "Audeze",
-    title: "audeze - 1/4’’ to 1/8’’ stereo adapter",
+    title: "audeze - 1/4’’ to 1/8’’ adapter",
     description: "6.35mm to 3.5mm Stereo Adapter",
     price: 1999,
     prevPrice: 2599,
@@ -517,7 +517,7 @@ export const products = [
   {
     _id: uuid(),
     brand: "Blon",
-    title: "blon - 4 core sliver plated cable",
+    title: "blon - 4 core plated cable",
     description: "sliver-plated Upgrade Cable",
     price: 849,
     prevPrice: 1599,
@@ -532,7 +532,7 @@ export const products = [
   {
     _id: uuid(),
     brand: "Campfire Audio",
-    title: "campfire audio - cascade ear pads",
+    title: "campfire audio - ear pads",
     description: "soft pad",
     price: 3999,
     prevPrice: 4289,
@@ -577,8 +577,7 @@ export const products = [
   {
     _id: uuid(),
     brand: "dekoni audio",
-    title:
-      "dekoni audio - elite velour earpads for audio-technica ath - m series & sony cdr900st/mdr7506",
+    title: "dekoni audio - elite earpads",
     description: "Elite Velour Replacement Ear Pads",
     price: 4499,
     prevPrice: 5600,
@@ -592,8 +591,8 @@ export const products = [
   {
     _id: uuid(),
     brand: "dekoni audio",
-    title: "dekoni audio - elite earpads for audeze lcd series",
-    description: "Elite Sheepskin & Elite Velour Replacement Ear Pads",
+    title: "dekoni audio - elite earpads",
+    description: "Elite Velour Replacement Ear Pads",
     price: 4499,
     prevPrice: 5600,
     rating: 4,
@@ -606,7 +605,7 @@ export const products = [
   {
     _id: uuid(),
     brand: "effect audio",
-    title: " effect audio - vogue series virtuoso",
+    title: " effect audio - vogue series",
     description: "Pure UP-OCC 2-Pin/MMCX Upgrade Cable",
     price: 10999,
     prevPrice: 11999,
