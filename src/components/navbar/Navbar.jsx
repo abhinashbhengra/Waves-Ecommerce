@@ -62,8 +62,8 @@ export const Navbar = () => {
     };
   }, [input]);
 
-  console.log("search prod", searchProduct);
-  console.log("input length", input.length);
+  console.log(token);
+
   return (
     <div className="nav-main-container">
       <div className="nav-container">
@@ -123,7 +123,7 @@ export const Navbar = () => {
                   alt="cart"
                 />
                 <div className="cart-quantity">
-                  <p>{cartItems.length}</p>
+                  {token ? <p>{cartItems.length}</p> : <p>0</p>}
                 </div>
               </Link>
               <Link to="/wishlist" className="wishlist-logo-quantity">
@@ -133,7 +133,7 @@ export const Navbar = () => {
                   className="wishlist-logo"
                 />
                 <div className="wishlist-quantity">
-                  <p>{wishlistItems.length}</p>
+                  {token ? <p>{wishlistItems.length}</p> : <p>0</p>}
                 </div>
               </Link>
               <Link to="/profile">
