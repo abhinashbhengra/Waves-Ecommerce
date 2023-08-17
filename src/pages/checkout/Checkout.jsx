@@ -25,7 +25,7 @@ const loadScript = (src) => {
 };
 
 export const Checkout = () => {
-  const { cartItems, getCartItems } = useContext(CartContext);
+  const { cartItems, setCartItems, getCartItems } = useContext(CartContext);
   const { authState } = useContext(AuthContext);
   const { token } = authState;
   const [address, setAddress] = useState([]);
@@ -59,11 +59,10 @@ export const Checkout = () => {
   };
 
   const checkoutAddressHandler = (address) => {
-    console.log(address);
+    setCheckoutAddress(address);
   };
 
   const handleConfrimOrder = async (amount) => {
-    console.log("payment", amount);
     const res = await loadScript(
       "https://checkout.razorpay.com/v1/checkout.js"
     );
@@ -79,9 +78,10 @@ export const Checkout = () => {
       description: "Thanks for purchasing",
 
       handler: function (response) {
-        console.log("response", response);
-        alert(response.razorpay_payment_id);
-        alert("Payment Succesfull");
+        setCartItems((curr) => []);
+        if (response.razorpay_payment_id) {
+          navigate("/succesfull");
+        }
       },
 
       prefill: {

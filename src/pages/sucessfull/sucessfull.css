@@ -1,0 +1,18 @@
+.successfull-main-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.back-to-home {
+  margin-top: 2rem;
+  text-align: center;
+  padding: 0px 60px;
+
+  cursor: pointer;
+}
+
+.back-to-home p {
+  padding: 12px 0;
+  background-color: beige;
+}

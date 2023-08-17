@@ -17,6 +17,7 @@ import { Checkout } from "./pages/checkout/Checkout";
 
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Sucessfull } from "./pages/sucessfull/Succesfull";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
           <Route path="/wishlist" element={<WishList />} />
           <Route path="/profile" element={<User />} />
           <Route path="/checkout" element={<Checkout />} />
+          <Route path="/succesfull" element={<Sucessfull />} />
         </Route>
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
