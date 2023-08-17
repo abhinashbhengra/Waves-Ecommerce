@@ -2,19 +2,19 @@ export const RatingFilter = ({ rating, filterDispatch }) => {
   const handleRating = (e) => {
     switch (e.target.id) {
       case "four-star":
-        filterDispatch({ type: "RATING", payload: 4 });
+        filterDispatch({ type: "SET_RATING", payload: 4 });
         break;
       case "three-star":
-        filterDispatch({ type: "RATING", payload: 3 });
+        filterDispatch({ type: "SET_RATING", payload: 3 });
         break;
       case "two-star":
-        filterDispatch({ type: "RATING", payload: 2 });
+        filterDispatch({ type: "SET_RATING", payload: 2 });
         break;
       case "one-star":
-        filterDispatch({ type: "RATING", payload: 1 });
+        filterDispatch({ type: "SET_RATING", payload: 1 });
         break;
       default:
-        filterDispatch({ type: "RATING", type: null });
+        filterDispatch({ type: "SET_RATING", type: null });
     }
   };
 
@@ -28,7 +28,7 @@ export const RatingFilter = ({ rating, filterDispatch }) => {
               <input
                 type="radio"
                 name="rating"
-                id="four-start"
+                id="four-star"
                 checked={rating === 4}
                 onChange={handleRating}
               />
@@ -49,7 +49,7 @@ export const RatingFilter = ({ rating, filterDispatch }) => {
               <input
                 type="radio"
                 name="rating"
-                id="three-start"
+                id="three-star"
                 checked={rating === 3}
                 onChange={handleRating}
               />
@@ -70,7 +70,7 @@ export const RatingFilter = ({ rating, filterDispatch }) => {
               <input
                 type="radio"
                 name="rating"
-                id="two-start"
+                id="two-star"
                 checked={rating === 2}
                 onChange={handleRating}
               />
@@ -91,7 +91,7 @@ export const RatingFilter = ({ rating, filterDispatch }) => {
               <input
                 type="radio"
                 name="rating"
-                id="one-start"
+                id="one-star"
                 checked={rating === 1}
                 onChange={handleRating}
               />
