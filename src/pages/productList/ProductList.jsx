@@ -55,6 +55,7 @@ const ProductList = () => {
             <div>
               <Filters />
             </div>
+
             <div className="products-list">
               {filteredData.map((product) => (
                 <ProductCard product={product} key={product._id} />
