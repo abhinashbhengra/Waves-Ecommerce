@@ -8,6 +8,22 @@ import { AuthContext } from "../../context/AuthContext";
 
 import { toast } from "react-toastify";
 
+const loadScript = (src) => {
+  return new Promise((resolve) => {
+    const script = document.createElement("script");
+    script.src = src;
+
+    script.onload = () => {
+      resolve(true);
+    };
+    script.onerror = () => {
+      resolve(false);
+    };
+
+    document.body.appendChild(script);
+  });
+};
+
 export const Checkout = () => {
   const { cartItems, getCartItems } = useContext(CartContext);
   const { authState } = useContext(AuthContext);
@@ -43,8 +59,37 @@ export const Checkout = () => {
   };
 
   const checkoutAddressHandler = (address) => {
-    setCheckoutAddress(address);
     console.log(address);
+  };
+
+  const handleConfrimOrder = async (amount) => {
+    console.log("payment", amount);
+    const res = await loadScript(
+      "https://checkout.razorpay.com/v1/checkout.js"
+    );
+    if (!res) {
+      alert("falied to load");
+      return;
+    }
+    const options = {
+      key: "rzp_test_JK6JJX5HJlRHKP",
+      currency: "INR",
+      amount: amount * 100,
+      name: "Waves-zone",
+      description: "Thanks for purchasing",
+
+      handler: function (response) {
+        console.log("response", response);
+        alert(response.razorpay_payment_id);
+        alert("Payment Succesfull");
+      },
+
+      prefill: {
+        name: "Waves-zone",
+      },
+    };
+    const paymentObject = new window.Razorpay(options);
+    paymentObject.open();
   };
 
   useEffect(() => {
@@ -65,8 +110,6 @@ export const Checkout = () => {
     fetchaddress();
     getCartItems();
   }, []);
-
-  console.log("checkout add", checkoutAddress);
 
   return (
     <div>
@@ -242,7 +285,10 @@ export const Checkout = () => {
                     <p className="checkout-total-price">₹ {total - discount}</p>
                   </div>
                 </div>
-                <button className="checkout-button">
+                <button
+                  className="checkout-button"
+                  onClick={() => handleConfrimOrder(total)}
+                >
                   <p>Confirm order</p>
                 </button>
               </div>
