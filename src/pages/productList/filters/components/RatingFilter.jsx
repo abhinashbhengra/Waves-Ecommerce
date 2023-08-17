@@ -32,7 +32,16 @@ export const RatingFilter = ({ rating, filterDispatch }) => {
                 checked={rating === 4}
                 onChange={handleRating}
               />
-              <p className="rating-detail">4 stars and above</p>
+              <p className="rating-detail">
+                4
+                <span>
+                  <img
+                    src="https://ik.imagekit.io/u6itcrvxy/Nav_Icon/star-c.png?updatedAt=1684993521625"
+                    alt="star"
+                  />{" "}
+                </span>
+                & above
+              </p>
             </label>
           </div>
           <div>
@@ -44,7 +53,16 @@ export const RatingFilter = ({ rating, filterDispatch }) => {
                 checked={rating === 3}
                 onChange={handleRating}
               />
-              <p className="rating-detail">3 stars and above</p>
+              <p className="rating-detail">
+                3
+                <span>
+                  <img
+                    src="https://ik.imagekit.io/u6itcrvxy/Nav_Icon/star-c.png?updatedAt=1684993521625"
+                    alt="star"
+                  />{" "}
+                </span>
+                & above
+              </p>
             </label>
           </div>
           <div>
@@ -56,7 +74,16 @@ export const RatingFilter = ({ rating, filterDispatch }) => {
                 checked={rating === 2}
                 onChange={handleRating}
               />
-              <p className="rating-detail">2 stars and above</p>
+              <p className="rating-detail">
+                2
+                <span>
+                  <img
+                    src="https://ik.imagekit.io/u6itcrvxy/Nav_Icon/star-c.png?updatedAt=1684993521625"
+                    alt="star"
+                  />{" "}
+                </span>
+                & above
+              </p>
             </label>
           </div>
           <div>
@@ -68,7 +95,16 @@ export const RatingFilter = ({ rating, filterDispatch }) => {
                 checked={rating === 1}
                 onChange={handleRating}
               />
-              <p className="rating-detail">1 stars and above</p>
+              <p className="rating-detail">
+                1
+                <span>
+                  <img
+                    src="https://ik.imagekit.io/u6itcrvxy/Nav_Icon/star-c.png?updatedAt=1684993521625"
+                    alt="star"
+                  />{" "}
+                </span>
+                & above
+              </p>
             </label>
           </div>
         </div>

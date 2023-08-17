@@ -68,15 +68,13 @@ export const ProductCard = ({ product }) => {
           </p>
         </div>
         <div className="productCard-rating">
-          <p>
-            {product.rating}{" "}
-            <span>
-              <img
-                src="https://ik.imagekit.io/u6itcrvxy/Nav_Icon/star-c.png?updatedAt=1684993521625"
-                alt="star"
-              />
-            </span>
-          </p>
+          <p>{product.rating}</p>
+          <span>
+            <img
+              src="https://ik.imagekit.io/u6itcrvxy/Nav_Icon/star-c.png?updatedAt=1684993521625"
+              alt="star"
+            />
+          </span>
         </div>
       </div>
       <div>
